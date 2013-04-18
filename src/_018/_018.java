@@ -30,11 +30,11 @@ public class _018 {
 				 4, 62, 98, 27, 23,  9, 70, 98, 73, 93, 38, 53, 60,  4, 23
 				);
 		
-		System.out.println(triangle);
-		System.out.println("Calculating Max Paths");
+		//System.out.println(triangle);
+		//System.out.println("Calculating Max Paths");
 		IntTriangle pathSums = DynamicAlgorithms.calculateMaxPaths(triangle);
-		System.out.println(pathSums);
-		System.out.println("Max Path: " + DynamicAlgorithms.getMaxPath(pathSums));
+		//System.out.println(pathSums);
+		System.out.println(DynamicAlgorithms.getMaxPath(pathSums));
 		
 	}
 

@@ -5,10 +5,12 @@ import lib.Numbers;
 public class _004 {
 	
 	public static void main(String[] args) {
-		new _004(3);
+		new _004();
 	}
 
-	public _004(int digits) {
+	public _004() {
+		int digits = 3;
+		
 		int upper = (int)Math.pow(10, digits) - 1;
 		int max = 0;
 		int mult = 0;

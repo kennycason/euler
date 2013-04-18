@@ -29,10 +29,12 @@ public class _011 {
 	};
 	
 	public static void main(String[] args) {
-		new _011(4);
+		new _011();
 	}
 
-	public _011(int n) {
+	public _011() {
+		int n = 4;
+		
 		long max = 0;
 		int prod;
 		// Vertical

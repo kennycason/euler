@@ -3,10 +3,11 @@ package _006;
 public class _006 {
 	
 	public static void main(String[] args) {
-		new _006(100);
+		new _006();
 	}
 
-	public _006(int n) {
+	public _006() {
+		int n = 100;
 		System.out.println(squareOfSums(n) - sumOfSquares(n));
 	}
 	

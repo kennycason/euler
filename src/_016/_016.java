@@ -8,10 +8,11 @@ public class _016 {
 	
 	
 	public static void main(String[] args) {
-		new _016(1000);
+		new _016();
 	}
 	
-	public _016(int exp) {
+	public _016() {
+		int exp = 1000;
 		BigInteger n = Numbers.bigPow(2, exp);
 		String digits = n.toString();
 		int sum = 0;

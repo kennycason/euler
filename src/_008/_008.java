@@ -27,10 +27,12 @@ public class _008 {
 	};
 	
 	public static void main(String[] args) {
-		new _008(5);
+		new _008();
 	}
 
-	public _008(int n) {
+	public _008() {
+		int n = 5;
+		
 		int max = 0;
 		int prod;
 		for(int i = 0; i < num.length - n; i++) {

@@ -8,7 +8,7 @@ public class _015 {
 	
 	
 	public static void main(String[] args) {
-		new _015(20);
+		new _015();
 	}
 
 	/*
@@ -42,7 +42,9 @@ public class _015 {
 	 *   (20*2 20), 40 choose 20 = 40! / 20!(40-20)! = ? 
 	 *   it's a big number lets calculate it :P
 	 */
-	public _015(int dim) {
+	public _015() {
+		int dim = 20;
+		
 		System.out.println(Probability.bigCombination(dim * 2, dim));
 	}
 	

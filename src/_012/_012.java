@@ -5,7 +5,7 @@ package _012;
 public class _012 {
 	
 	public static void main(String[] args) {
-		new _012(500);
+		new _012();
 	}
 
 	/** 
@@ -16,7 +16,9 @@ public class _012 {
 	 * D(28) = (2+1) * (1+1) = 3 * 2 = 6 
 	 *  + prime number lookup array
 	 */
-	public _012(int numDivisors) {
+	public _012() {
+		int numDivisors = 500;
+		
 		int triangle = 1;
 		int a = 1;
 		int divisors = 0;

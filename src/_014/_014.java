@@ -11,10 +11,12 @@ public class _014 {
 	
 	
 	public static void main(String[] args) {
-		new _014(1000000);
+		new _014();
 	}
 
-	public _014(int n) {;
+	public _014() {
+		int n = 1000000;
+		
 		int maxi = -1;
 		List<Long> maxSeq = new LinkedList<Long>();
 		
