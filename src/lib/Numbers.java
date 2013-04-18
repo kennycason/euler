@@ -1,0 +1,96 @@
+package lib;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Numbers {
+
+	private Numbers() {
+	}
+	
+	public static List<Long> primeFactors(long n) {
+		LinkedList<Long> factors = new LinkedList<Long>();
+		double root = Math.sqrt(n);
+		for(long i = 2; i <= root; i++) {
+			while(n % i == 0) {
+				factors.add(i);
+				n /= i;
+			}
+		}
+		if(n > 1) {
+			factors.add(n);
+		}
+		return factors;
+	}
+	
+	public static List<Long> factors(long n) {
+		LinkedList<Long> factors = new LinkedList<Long>();
+		if(n == 1) {
+			factors.add(1l);
+			return factors;
+		}
+		long half = n / 2;
+		for(long i = 1; i <= half; i++) {
+			if(n % i == 0) {
+				factors.add(i);
+			}
+		}
+		factors.add(n);
+		return factors;
+	}
+	
+	public static void filterNonPrime(List<Long> list) {
+		Iterator<Long> iter = list.iterator();
+		while(iter.hasNext()) {
+			if(!Numbers.isPrime(iter.next())) {
+				iter.remove();
+			}
+		}
+	}
+	
+	public static long sum(int from, int to) {
+		long sum = 0;
+		for(int i = from; i <= to; i++) {
+			sum += i;
+		}
+		return sum;
+	}
+
+	public static long reverse(long n) {
+		long reverse = 0;
+		while (n != 0) {
+			long lastDigit = n % 10;
+			reverse = reverse * 10 + lastDigit;
+			n /= 10;
+		}
+		return reverse;
+	}
+
+	public static boolean isPalindrome(long n) {
+		return n == reverse(n);
+	}
+	
+	public static boolean isPrime(long n) {
+		// prime numbers are natural by definition
+		if(n <= 1) {
+			return false;
+		}
+		// is the number divisible by n, such that n >= 2 and n <= sqrt(number)?
+	    // if so then the number is composite
+		double root = Math.sqrt(n);
+		for(long i = 2; i <= root; i++) {
+			if(n % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public static boolean isPythagoreanTriplet(int a, int b, int c) {
+		return a < b && 
+				b < c &&
+				a * a + b * b == c * c;
+	}
+
+}
