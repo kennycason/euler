@@ -1,11 +1,6 @@
 package _015;
 
-import java.util.LinkedList;
-import java.util.List;
-
-import lib.Numbers;
 import lib.Probability;
-import lib.Sequence;
 
 
 
