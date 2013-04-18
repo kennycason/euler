@@ -1,5 +1,6 @@
 package lib;
 
+import java.math.BigInteger;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,6 +9,25 @@ public class Numbers {
 
 	private Numbers() {
 	}
+	
+	// poor man's factorial ^_^, should use SplitRecursive or anything but this...
+	public static long factorial(long n) {
+		long f = 1;
+		while(n > 1) {
+			f *= n;
+			n--;
+		}
+		return f;
+	}
+	
+	public static BigInteger bigFactorial(long n) {
+		BigInteger f = new BigInteger("1");
+		while(n > 1) {
+			f = f.multiply(new BigInteger(String.valueOf(n)));
+			n--;
+		}
+		return f;
+	}	
 	
 	public static List<Long> primeFactors(long n) {
 		LinkedList<Long> factors = new LinkedList<Long>();
