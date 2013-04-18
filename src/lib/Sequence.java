@@ -30,20 +30,20 @@ public class Sequence {
 		return seq;
 	}
 	
-	public static List<Integer> fibonacciMaxTerm(long max) {
-		LinkedList<Integer> seq = new LinkedList<Integer>();
+	public static List<Long> fibonacciMaxTerm(long max) {
+		LinkedList<Long> seq = new LinkedList<Long>();
 		if(max <= 0) {
 			return seq;
 		}
-		seq.add(1);
+		seq.add(1l);
 		if(max <= 1) {
 			return seq;
 		}
-		seq.add(2);
+		seq.add(2l);
 		
-		int n1 = 1;
-		int n2 = 2;
-		int val;
+		long n1 = 1;
+		long n2 = 2;
+		long val;
 		for(;;) {
 			val = n1 + n2;
 			if(val > max) {
@@ -56,8 +56,8 @@ public class Sequence {
 		return seq;
 	}
 	
-	public static List<Integer> collatz(int n) {
-		LinkedList<Integer> seq = new LinkedList<Integer>();
+	public static List<Long> collatz(long n) {
+		LinkedList<Long> seq = new LinkedList<Long>();
 		seq.add(n);
 		while(n > 1) {
 			if(n % 2 == 0) {

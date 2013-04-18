@@ -16,9 +16,9 @@ public class _014 {
 
 	public _014(int n) {;
 		int maxi = -1;
-		List<Integer> maxSeq = new LinkedList<Integer>();
+		List<Long> maxSeq = new LinkedList<Long>();
 		
-		List<Integer> seq;
+		List<Long> seq;
 		for(int i = 0; i < n; i++) {
 			seq = Sequence.collatz(i);
 			if(seq.size() > maxSeq.size()) {
@@ -26,7 +26,8 @@ public class _014 {
 				maxi = i;
 			}
 		}
-		System.out.println(maxi + ": (" + maxSeq.size() + ") " + maxSeq);
+		//System.out.println(maxi + ": (" + maxSeq.size() + ") " + maxSeq);
+		System.out.println(maxi);
 	}
 	
 }
