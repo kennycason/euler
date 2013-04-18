@@ -23,11 +23,10 @@ public class _067 {
 		int[] data = loadFromFile("_067/triangle.dat");
 		triangle.setAll(data);
 		
-		System.out.println(triangle);
-		System.out.println("Calculating Max Paths");
+		//System.out.println(triangle);
 		IntTriangle pathSums = DynamicAlgorithms.calculateMaxPaths(triangle);
-		System.out.println(pathSums);
-		System.out.println("Max Path: " + DynamicAlgorithms.getMaxPath(pathSums));
+		//System.out.println(pathSums);
+		System.out.println(DynamicAlgorithms.getMaxPath(pathSums));
 		
 	}
 	
