@@ -10,6 +10,24 @@ public class Numbers {
 	private Numbers() {
 	}
 	
+	public static long sum(List<? extends Number> list) {
+		long sum = 0;
+		for(Number l : list) {
+			sum += l.longValue();
+		}
+		return sum;
+	}
+	
+	public static List<Long> properDivisors(long n) {
+		List<Long> divisors = new LinkedList<Long>();
+		for(long i = 1; i <= n / 2; i++) {
+			if(n % i == 0) {
+				divisors.add(i);
+			}
+		}
+		return divisors;
+	}
+	
 	// poor man's factorial ^_^, should use SplitRecursive or anything but this...
 	public static long factorial(long n) {
 		long f = 1;
