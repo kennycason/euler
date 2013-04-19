@@ -22,7 +22,7 @@ public class Runner {
 				clock.reset();
 				System.out.println();
 			} catch (Exception e) {
-				// Pokemon, gotta catchem all!
+				// Pokemon, gotta catch'em all!
 			} 
 		}
 	}
