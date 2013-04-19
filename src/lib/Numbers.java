@@ -18,6 +18,18 @@ public class Numbers {
 		return sum;
 	}
 	
+	public static boolean isDeficient(long n) {
+		return sum(properDivisors(n)) < n;
+	}
+	
+	public static boolean isPerfect(long n) {
+		return sum(properDivisors(n)) == n;
+	}
+	
+	public static boolean isAbundant(long n) {
+		return sum(properDivisors(n)) > n;
+	}
+	
 	public static List<Long> properDivisors(long n) {
 		List<Long> divisors = new LinkedList<Long>();
 		for(long i = 1; i <= n / 2; i++) {
