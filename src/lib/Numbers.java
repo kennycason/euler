@@ -51,7 +51,7 @@ public class Numbers {
 	}
 	
 	public static BigInteger bigFactorial(long n) {
-		BigInteger f = new BigInteger("1");
+		BigInteger f = BigInteger.valueOf(1);
 		while(n > 1) {
 			f = f.multiply(new BigInteger(String.valueOf(n)));
 			n--;
@@ -101,10 +101,10 @@ public class Numbers {
 	
 	public static BigInteger bigPow(int base, int exp) {
 		if(exp == 0) {
-			return new BigInteger("0");
+			return BigInteger.valueOf(0);
 		}
-		BigInteger n = new BigInteger(String.valueOf(base));
-		BigInteger b = new BigInteger(String.valueOf(base));
+		BigInteger n = BigInteger.valueOf(base);
+		BigInteger b = BigInteger.valueOf(base);
 		for(int i = 1; i < exp; i++) {
 			n = n.multiply(b);
 		}
