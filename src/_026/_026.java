@@ -1,11 +1,5 @@
 package _026;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
-import java.util.List;
-
-import lib.Numbers;
 
 public class _026 {
 
@@ -41,7 +35,7 @@ public class _026 {
 				sequenceLength = position - foundRemainders[value];
 			}
 		}
-		System.out.println(sequenceLength + 1);
+		System.out.println(sequenceLength + 1); 
 	}
 
 }
