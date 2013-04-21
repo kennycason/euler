@@ -21,7 +21,6 @@ public class _027 {
 					maxA = a;
 					maxB = b;
 					max = count;
-					System.out.println(a + " " + b + " = " + count);
 				}
 				
 			}	
