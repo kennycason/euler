@@ -64,6 +64,7 @@ public class _028 {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private void print(int[][] mat) {
 		for(int y = 0; y < mat[0].length; y++) {
 			for(int x = 0; x < mat.length; x++) {
