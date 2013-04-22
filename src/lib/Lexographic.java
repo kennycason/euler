@@ -7,7 +7,7 @@ import java.util.List;
 public class Lexographic {
 	
 
-	public static List<String> enumerate(char[] alphabet, int from) {
+	public static List<String> enumerate(char[] alphabet) {
 		return enumerate(new char[alphabet.length], 0, new BitSet(), alphabet);
 
 	}
@@ -27,6 +27,18 @@ public class Lexographic {
 			}
 		}
 		return enums;
+	}
+
+	public static List<String> circle(String s) {
+		List<String> circles = new ArrayList<String>();
+		for(int i = 0; i < s.length(); i++) {
+			char[] cs = new char[s.length()];
+			for(int off = 0; off <cs.length; off++) {
+				cs[(i + off) % cs.length] = s.charAt(off % cs.length);
+			}
+			circles.add(new String(cs));
+		}
+		return circles;
 	}
 
 }
