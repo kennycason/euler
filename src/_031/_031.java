@@ -2,10 +2,7 @@ package _031;
 
 
 public class _031 {
-
-	@SuppressWarnings("unused")
-	private int combinations;
-
+	
 	private int max;
 
 	private int[] coins = { 1, 2, 5, 10, 20, 50, 100, 200 };
@@ -19,7 +16,7 @@ public class _031 {
 	 */
 	public _031() {
 		max = 200;
-		// count(0); // - recursive, very very very slow
+		// System.out.println(count(max, coins.length - 1));
 		System.out.println(dynamic());
 	}
 
@@ -27,7 +24,7 @@ public class _031 {
 		int[] combMat = new int[max + 1];
 		combMat[0] = 1; // start with one combination
 
-		// for each coin iterate through, summing up total ways
+		// for each coin iterate through, layering, and summing up total combinations
 		for (int i = 0; i < coins.length; i++) {
 			for (int j = coins[i]; j <= max; j++) {
 				combMat[j] += combMat[j - coins[i]];
@@ -57,18 +54,16 @@ public class _031 {
 		return combinations;
 	}
 
-	@SuppressWarnings("unused")
-	private void count(int ammount) {
-		if (ammount == max) {
-			combinations++;
-			return;
+	private int count(int amount, int coin) {
+		if(coin < 1) {
+			return 1; // base case
 		}
-		if (ammount > max) {
-			return;
+		int total = 0;
+		while(amount >= 0) {
+			total += count(amount, coin - 1); 
+			amount -= coins[coin];
 		}
-		for (int i = 0; i < coins.length; i++) {
-			count(ammount + coins[i]);
-		}
+		return total;
 	}
 
 }
