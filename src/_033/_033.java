@@ -39,7 +39,6 @@ public class _033 {
 	private int strip(int n, int digit) {
 		int i = 0;
 		int m = 1;
-		boolean replaced = false;
 		while(n > 0) {
 			if(n % 10 != digit) {
 				i += m * (n % 10);
