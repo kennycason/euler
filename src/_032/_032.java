@@ -24,7 +24,6 @@ public class _032 {
 				}
 			}
 		}
-
 		System.out.println(Numbers.sum(products));
 	}
 
@@ -45,7 +44,7 @@ public class _032 {
 		return false;
 	}
 
-	boolean consume(int i, BitSet set) {
+	private boolean consume(int i, BitSet set) {
 		while (i > 0) {
 			if (i % 10 == 0) {
 				return false;
@@ -58,5 +57,5 @@ public class _032 {
 		}
 		return true;
 	}
-
+	
 }

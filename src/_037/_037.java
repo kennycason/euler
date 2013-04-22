@@ -24,7 +24,7 @@ public class _037 {
 			}
 		}
 		
-		System.out.println("\n" + sum);
+		System.out.println(sum);
 	}
 
 	private boolean truncatableRtoL(Long prime) {
