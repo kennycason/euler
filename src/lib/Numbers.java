@@ -39,6 +39,15 @@ public class Numbers {
 		return sum(properDivisors(n)) > n;
 	}
 	
+	public static long gcd(long a, long b) {
+	    return b == 0 ? a : gcd(b, a % b); // Not bad for one line of code :)
+	}
+
+	public static String asFraction(long a, long b) {
+	    long gcd = gcd(a, b);
+	    return (a / gcd) + "/" + (b / gcd);
+	}
+	
 	public static List<Long> properDivisors(long n) {
 		List<Long> divisors = new LinkedList<Long>();
 		for(long i = 1; i <= n / 2; i++) {
