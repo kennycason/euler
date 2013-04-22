@@ -3,9 +3,6 @@ package _034;
 import lib.Numbers;
 
 
-
-
-
 public class _034 {
 
 	public static void main(String[] args) {

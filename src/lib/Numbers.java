@@ -1,6 +1,7 @@
 package lib;
 
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class Numbers {
 	private Numbers() {
 	}
 	
-	public static long sum(List<? extends Number> list) {
+	public static long sum(Collection<? extends Number> list) {
 		long sum = 0;
 		for(Number l : list) {
 			sum += l.longValue();
