@@ -54,6 +54,7 @@ public class _031 {
 		return combinations;
 	}
 
+	@SuppressWarnings("unused")
 	private int count(int amount, int coin) {
 		if(coin < 1) {
 			return 1; // base case
