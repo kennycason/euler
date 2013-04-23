@@ -1,8 +1,5 @@
 package _043;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import lib.Numbers;
 import lib.Sequence;
 
