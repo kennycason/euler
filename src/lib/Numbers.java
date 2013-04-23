@@ -87,8 +87,7 @@ public class Numbers {
 
 	public static List<Long> primeFactors(long n) {
 		LinkedList<Long> factors = new LinkedList<Long>();
-		double root = Math.sqrt(n);
-		for (long i = 2; i <= root; i++) {
+		for (long i = 2; i < n / i; i++) {
 			while (n % i == 0) {
 				factors.add(i);
 				n /= i;
@@ -113,6 +112,17 @@ public class Numbers {
 			}
 		}
 		factors.add(n);
+		return factors;
+	}
+	
+	public static List<Long> factorsExclude1AndN(long n) {
+		LinkedList<Long> factors = new LinkedList<Long>();
+		long half = n / 2;
+		for (long i = 2; i <= half; i++) {
+			if (n % i == 0) {
+				factors.add(i);
+			}
+		}
 		return factors;
 	}
 
