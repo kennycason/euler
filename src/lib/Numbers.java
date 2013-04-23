@@ -192,13 +192,14 @@ public class Numbers {
 	public static boolean is1To9PanDigit(int i) {
 		BitSet set = new BitSet();
 		while (i > 0) {
-			if (i % 10 == 0) {
+			int mod = i % 10;
+			if (mod == 0) {
 				return false;
 			}
-			if (set.get(i % 10)) {
+			if (set.get(mod)) {
 				return false;
 			}
-			set.set(i % 10);
+			set.set(mod);
 			i /= 10;
 		}
 		for (int d = 1; d < 10; d++) {
@@ -207,7 +208,38 @@ public class Numbers {
 			}
 		}
 		return true;
-
 	}
 
+	public static boolean is1ToNPanDigit(int i, int n) {
+		BitSet set = new BitSet();
+		while (i > 0) {
+			int mod = i % 10;
+			if (mod == 0 || mod > n) {
+				return false;
+			}
+			if (set.get(mod)) {
+				return false;
+			}
+			set.set(mod);
+			i /= 10;
+		}
+		return set.cardinality() == n;
+	}
+	
+	public static int maxPanDigit(int n) {
+		StringBuffer sb = new StringBuffer();
+		for(int i = n; i > 0; i--) {
+			sb.append(i);
+		}
+		return Integer.parseInt(sb.toString());
+	}
+	
+	public static int minPanDigit(int n) {
+		StringBuffer sb = new StringBuffer();
+		for(int i = 1; i <= n; i++) {
+			sb.append(i);
+		}
+		return Integer.parseInt(sb.toString());
+	}
+	
 }
