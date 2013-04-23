@@ -154,6 +154,10 @@ public class Numbers {
 		}
 		return reverse;
 	}
+	
+	public static int getNthDigit(long number, int n) {    
+		  return (int) ((number / Math.pow(10, n - 1)) % 10);
+	}
 
 	public static boolean isPalindrome(long n) {
 		return n == reverse(n);
@@ -190,13 +194,13 @@ public class Numbers {
 	}
 
 	public static boolean is1To9PanDigit(int i) {
+		if(i < 1e8) { 
+			return false;
+		}
 		BitSet set = new BitSet();
 		while (i > 0) {
 			int mod = i % 10;
-			if (mod == 0) {
-				return false;
-			}
-			if (set.get(mod)) {
+			if (mod == 0 || set.get(mod)) {
 				return false;
 			}
 			set.set(mod);
@@ -209,15 +213,36 @@ public class Numbers {
 		}
 		return true;
 	}
+	
+	public static boolean is0To9PanDigit(long i) {
+		if(i < 1e6) {
+			return false;
+		}
+		BitSet set = new BitSet();
+		while (i > 0) {
+			int mod = (int) (i % 10);
+			if (set.get(mod)) {
+				return false;
+			}
+			set.set(mod);
+			i /= 10;
+		}
+		if(i < 1e7) { // count for leading zero
+			set.set(0);
+		}
+		for (int d = 0; d < 10; d++) {
+			if (!set.get(d)) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 	public static boolean is1ToNPanDigit(int i, int n) {
 		BitSet set = new BitSet();
 		while (i > 0) {
 			int mod = i % 10;
-			if (mod == 0 || mod > n) {
-				return false;
-			}
-			if (set.get(mod)) {
+			if (mod == 0 || mod > n || set.get(mod)) {
 				return false;
 			}
 			set.set(mod);
