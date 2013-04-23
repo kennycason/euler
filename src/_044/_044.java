@@ -11,11 +11,11 @@ public class _044 {
 
 	public _044() {
 		Set<Integer> ps = new HashSet<Integer>();
-		for(int i = 1; i < 100000; i++) {
+		for(int i = 1; i < 10000; i++) {
 			ps.add(p(i));
 		}
-		for(int j = 1; j < 100000; j++) {
-			for(int k = 1; k < 100000; k++) {
+		for(int j = 1; j < 10000; j++) {
+			for(int k = 1; k < 10000; k++) {
 				int pj = p(j);
 				int pk = p(k);
 				if(ps.contains(pj + pk) && ps.contains(Math.abs(pk - pj))) {
