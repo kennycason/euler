@@ -1,217 +1,62 @@
-euler
+Project Euler - Java
 =====
 
-Project Euler in Java<br/>
+My attempt at Project Euler problems using Java<br/>
 <img src="http://projecteuler.net/profile/kennycason.png?id=1"/>
 
-Current results from Runner.java:
-=====
-Problem #1
-Answer: 233168
-Time: 0.0s
-
-Problem #2
-Answer: 4613732
-Time: 0.002s
-
-Problem #3
-Answer: 6857
-Time: 0.002s
-
-Problem #4
-Answer: 906609
-Time: 0.032s
-
-Problem #5
-Answer: 232792560
-Time: 0.646s
-
-Problem #6
-Answer: 25164150
-Time: 0.0s
-
-Problem #7
-Answer: 104743
-Time: 0.029s
-
-Problem #8
-Answer: 40824
-Time: 0.001s
-
-Problem #9
-Answer: 31875000
-Time: 0.89s
-
-Problem #10
-Answer: 142913828922
-Time: 1.323s
-
-Problem #11
-Answer: 70600674
-Time: 0.001s
-
-Problem #12
-Answer: 76576500
-Time: 0.393s
-
-Problem #13
-Answer: 5537376230
-Time: 0.016s
-
-Problem #14
-Answer: 837799
-Time: 2.247s
-
-Problem #15
-Answer: 137846528820
-Time: 0.002s
-
-Problem #16
-Answer: 1366
-Time: 0.01s
-
-Problem #17
-Answer: 21124
-Time: 0.064s
-
-Problem #18
-Answer: 1074
-Time: 0.002s
-
-Problem #19
-Answer: 171
-Time: 0.363s
-
-Problem #20
-Answer: 648
-Time: 0.005s
-
-Problem #21
-Answer: 31626
-Time: 0.226s
-
-Problem #22
-Answer: 871198282
-Time: 0.184s
-
-Problem #23
-Answer: 4179871
-Time: 5.904s
-
-Problem #24
-Answer: 2783915460
-Time: 2.878s
-
-Problem #25
-Answer: 4782
-Time: 0.413s
-
-Problem #26
-Answer: 983
-Time: 0.0s
-
-Problem #27
-Answer: -59231
-Time: 0.121s
-
-Problem #28
-Answer: 669171001
-Time: 0.023s
-
-Problem #29
-Answer: 9183
-Time: 0.083s
-
-Problem #30
-Answer: 443839
-Time: 0.01s
-
-Problem #31
-Answer: 73682
-Time: 0.0s
-
-Problem #32
-Answer: 45228
-Time: 0.085s
-
-Problem #33
-Answer: 100
-Time: 0.009s
-
-Problem #34
-Answer: 40730
-Time: 0.02s
-
-Problem #35
-Answer: 55
-Time: 1.095s
-
-Problem #36
-Answer: 872187
-Time: 0.033s
-
-Problem #37
-Answer: 748317
-Time: 0.787s
-
-Problem #38
-Answer: 932718654
-Time: 0.05s
-
-Problem #39
-Answer: 840
-Time: 0.191s
-
-Problem #40
-Answer: 210
-Time: 0.038s
-
-Problem #41
-Answer: 7652413
-Time: 18.952s
-
-Problem #42
-Answer: 162
-Time: 0.021s
-
-Problem #43
-Answer: 16695334890
-Time: 11.114s
-
-Problem #44
-Answer: 5482660
-Time: 0.272s
-
-Problem #45
-Answer: 1533776805
-Time: 5.293s
-
-Problem #46
-Answer: 5777
-Time: 0.016s
-
-Problem #47
-Answer: 134043
-Time: 0.275s
-
-Problem #48
-Answer: 9110846700
-Time: 0.557s
-
-Problem #49
-Answer: 296962999629
-Time: 0.334s
-
-Problem #50
-Answer: 997651
-Time: 0.0s
-
-Problem #53
-Answer: 4075
-Time: 0.185s
-
-Problem #67
-Answer: 7273
-Time: 0.032s
-
-
+Current results from Runner.java:)<br/>
+<table border="1" cellpadding="4">
+<tr><td></td><td>Answer</td><td>Time</td>Link to Source</tr>
+<tr><td><b>#1</b></td><td>233168</td><td style="background-color:#01ff00">0.002ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_001/_001.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#2</b></td><td>4613732</td><td style="background-color:#01ff00">0.002ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_002/_002.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#3</b></td><td>6857</td><td style="background-color:#01ff00">0.002ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_003/_003.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#4</b></td><td>906609</td><td style="background-color:#05fb00">0.033ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_004/_004.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#5</b></td><td>232792560</td><td style="background-color:#53ad00">0.65ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_005/_005.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#6</b></td><td>25164150</td><td style="background-color:#00ff00">0.0ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_006/_006.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#7</b></td><td>104743</td><td style="background-color:#04fc00">0.027ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_007/_007.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#8</b></td><td>40824</td><td style="background-color:#01ff00">0.001ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_008/_008.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#9</b></td><td>31875000</td><td style="background-color:#728e00">0.893ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_009/_009.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#10</b></td><td>142913828922</td><td style="background-color:#a85800">1.313ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_010/_010.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#11</b></td><td>70600674</td><td style="background-color:#00ff00">0.0ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_011/_011.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#12</b></td><td>76576500</td><td style="background-color:#32ce00">0.39ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_012/_012.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#13</b></td><td>5537376230</td><td style="background-color:#03fd00">0.016ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_013/_013.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#14</b></td><td>837799</td><td style="background-color:#ff0000">2.291ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_014/_014.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#15</b></td><td>137846528820</td><td style="background-color:#01ff00">0.002ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_015/_015.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#16</b></td><td>1366</td><td style="background-color:#02fe00">0.01ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_016/_016.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#17</b></td><td>21124</td><td style="background-color:#09f700">0.065ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_017/_017.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#18</b></td><td>1074</td><td style="background-color:#01ff00">0.002ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_018/_018.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#19</b></td><td>171</td><td style="background-color:#2ed200">0.36ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_019/_019.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#20</b></td><td>648</td><td style="background-color:#01ff00">0.004ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_020/_020.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#21</b></td><td>31626</td><td style="background-color:#1ee200">0.234ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_021/_021.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#22</b></td><td>871198282</td><td style="background-color:#18e800">0.188ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_022/_022.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#23</b></td><td>4179871</td><td style="background-color:#ff0000">5.251ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_023/_023.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#24</b></td><td>2783915460</td><td style="background-color:#ff0000">2.86ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_024/_024.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#25</b></td><td>4782</td><td style="background-color:#51af00">0.635ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_025/_025.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#26</b></td><td>983</td><td style="background-color:#01ff00">0.001ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_026/_026.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#27</b></td><td>-59231</td><td style="background-color:#10f000">0.123ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_027/_027.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#28</b></td><td>669171001</td><td style="background-color:#03fd00">0.023ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_028/_028.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#29</b></td><td>9183</td><td style="background-color:#0cf400">0.091ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_029/_029.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#30</b></td><td>443839</td><td style="background-color:#02fe00">0.01ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_030/_030.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#31</b></td><td>73682</td><td style="background-color:#01ff00">0.001ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_031/_031.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#32</b></td><td>45228</td><td style="background-color:#0bf500">0.086ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_032/_032.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#33</b></td><td>100</td><td style="background-color:#02fe00">0.009ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_033/_033.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#34</b></td><td>40730</td><td style="background-color:#02fe00">0.014ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_034/_034.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#35</b></td><td>55</td><td style="background-color:#8d7300">1.099ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_035/_035.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#36</b></td><td>872187</td><td style="background-color:#05fb00">0.033ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_036/_036.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#37</b></td><td>748317</td><td style="background-color:#659b00">0.79ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_037/_037.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#38</b></td><td>932718654</td><td style="background-color:#07f900">0.051ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_038/_038.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#39</b></td><td>840</td><td style="background-color:#19e700">0.196ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_039/_039.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#40</b></td><td>210</td><td style="background-color:#04fc00">0.028ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_040/_040.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#41</b></td><td>7652413</td><td style="background-color:#ff0000">19.324ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_041/_041.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#42</b></td><td>162</td><td style="background-color:#03fd00">0.019ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_042/_042.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#43</b></td><td>16695334890</td><td style="background-color:#ff0000">11.003ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_043/_043.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#44</b></td><td>5482660</td><td style="background-color:#23dd00">0.271ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_044/_044.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#45</b></td><td>1533776805</td><td style="background-color:#ff0000">5.278ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_045/_045.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#46</b></td><td>5777</td><td style="background-color:#02fe00">0.012ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_046/_046.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#47</b></td><td>134043</td><td style="background-color:#25db00">0.287ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_047/_047.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#48</b></td><td>9110846700</td><td style="background-color:#4eb200">0.61ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_048/_048.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#49</b></td><td>296962999629</td><td style="background-color:#2dd300">0.352ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_049/_049.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#50</b></td><td>997651</td><td style="background-color:#00ff00">0.0ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_050/_050.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#53</b></td><td>4075</td><td style="background-color:#19e700">0.191ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_053/_053.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+<tr><td><b>#67</b></td><td>7273</td><td style="background-color:#05fb00">0.032ms</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_067/_067.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
+</table>
