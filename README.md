@@ -1,8 +1,8 @@
 euler
 =====
 
-Project Euler in Java
-<img src="http://projecteuler.net/profile/kennycason.png"/>
+Project Euler in Java<br/>
+<img src="http://projecteuler.net/profile/kennycason.png?id=1"/>
 
 Current results from Runner.java:
 =====
