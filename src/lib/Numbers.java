@@ -174,6 +174,22 @@ public class Numbers {
 		}
 		return true;
 	}
+	
+	public static boolean isComposite(long n) {
+		// prime numbers are natural by definition
+		if (n <= 1) {
+			return false;
+		}
+		// is the number divisible by n, such that n >= 2 and n <= sqrt(number)?
+		// if so then the number is composite
+		double root = Math.sqrt(n);
+		for (long i = 2; i <= root; i++) {
+			if (n % i == 0) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public static List<Long> primes(int to) {
 		List<Long> primes = new LinkedList<Long>();
