@@ -1,7 +1,9 @@
 package lib;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class Sequence {
 
@@ -70,13 +72,13 @@ public class Sequence {
 		return seq;
 	}
 
-	public static List<String> permutation(String str) {
-		List<String> permutations = new LinkedList<String>();
+	public static Set<String> permutation(String str) {
+		Set<String> permutations = new HashSet<String>();
 		permutation("", str, permutations);
 		return permutations;
 	}
 
-	private static void permutation(String prefix, String str, List<String> permutations) {
+	private static void permutation(String prefix, String str, Set<String> permutations) {
 		int n = str.length();
 		if (n == 0) {
 			permutations.add(prefix);
@@ -88,4 +90,23 @@ public class Sequence {
 		}
 	}
 
+	public static Set<Long> permutation(Long n) {
+		String str = String.valueOf(n);
+		Set<Long> permutations = new HashSet<Long>();
+		permutationLongs("", str, permutations);
+		return permutations;
+	}
+
+	private static void permutationLongs(String prefix, String str, Set<Long> permutations) {
+		int n = str.length();
+		if (n == 0) {
+			permutations.add(Long.parseLong(prefix));
+		} else {
+			for (int i = 0; i < n; i++) {
+				permutationLongs(prefix + str.charAt(i),
+						str.substring(0, i) + str.substring(i + 1, n), permutations);
+			}
+		}
+	}
+	
 }
