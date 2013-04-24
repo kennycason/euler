@@ -2,6 +2,7 @@ euler
 =====
 
 Project Euler in Java
+<img src="http://projecteuler.net/profile/kennycason.png"/>
 
 Current results from Runner.java:
 =====
