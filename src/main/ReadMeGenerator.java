@@ -75,7 +75,7 @@ public class ReadMeGenerator {
 				+ "=====\n\n"
 				+ "My attempt at Project Euler problems using Java<br/>\n"
 				+ "<img src=\"http://projecteuler.net/profile/kennycason.png?id=1\"/>\n\n"
-				+ "Current results<br/>\n");
+				+ "Current results (better view at: http://ken-soft.com/project-euler/)<br/>\n");
 		sb.append("<table border=\"1\" cellpadding=\"4\">\n<tr><td></td><td>Answer</td><td>Time</td><td>@Source</td</tr>\n");
 		for (Result r : results) {
 			
