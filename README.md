@@ -4,7 +4,7 @@ Project Euler - Java
 My attempt at Project Euler problems using Java<br/>
 <img src="http://projecteuler.net/profile/kennycason.png?id=1"/>
 
-Current results<br/>
+Current results (better view at: http://ken-soft.com/project-euler/)<br/>
 <table border="1" cellpadding="4">
 <tr><td></td><td>Answer</td><td>Time</td><td>@Source</td</tr>
 <tr><td><b>#1</b></td><td>233168</td><td style="background-color:#01ff00">0.002s</td><td><a href="https://github.com/kennycason/euler/blob/master/src/_001/_001.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
