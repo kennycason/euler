@@ -1,6 +1,7 @@
 package _043;
 
 import lib.Numbers;
+import lib.Primes;
 import lib.Sequence;
 
 public class _043 {
@@ -21,7 +22,7 @@ public class _043 {
 						+ Numbers.getNthDigit(i, s.length() - d - 1) * 10
 						+ Numbers.getNthDigit(i, s.length() - d - 2);
 				
-				if (n % Numbers.PRIME_TABLE[d - 1] != 0) {
+				if (n % Primes.PRIME_TABLE[d - 1] != 0) {
 					divisible = false;
 					break;
 				}

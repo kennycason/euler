@@ -8,21 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Numbers {
-
-	public static final int[] PRIME_TABLE = { 2, 3, 5, 7, 11, 13, 17, 19, 23,
-			29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97,
-			101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163,
-			167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233,
-			239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311,
-			313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389,
-			397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463,
-			467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563,
-			569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641,
-			643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727,
-			733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821,
-			823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907,
-			911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997 };
-
+	
 	private Numbers() {
 	}
 
@@ -114,7 +100,7 @@ public class Numbers {
 		factors.add(n);
 		return factors;
 	}
-	
+
 	public static List<Long> factorsExclude1AndN(long n) {
 		LinkedList<Long> factors = new LinkedList<Long>();
 		long half = n / 2;
@@ -164,9 +150,9 @@ public class Numbers {
 		}
 		return reverse;
 	}
-	
-	public static int getNthDigit(long number, int n) {    
-		  return (int) ((number / Math.pow(10, n - 1)) % 10);
+
+	public static int getNthDigit(long number, int n) {
+		return (int) ((number / Math.pow(10, n - 1)) % 10);
 	}
 
 	public static boolean isPalindrome(long n) {
@@ -204,7 +190,7 @@ public class Numbers {
 	}
 
 	public static boolean is1To9PanDigit(int i) {
-		if(i < 1e8) { 
+		if (i < 1e8) {
 			return false;
 		}
 		BitSet set = new BitSet();
@@ -223,9 +209,9 @@ public class Numbers {
 		}
 		return true;
 	}
-	
+
 	public static boolean is0To9PanDigit(long i) {
-		if(i < 1e6) {
+		if (i < 1e6) {
 			return false;
 		}
 		BitSet set = new BitSet();
@@ -237,7 +223,7 @@ public class Numbers {
 			set.set(mod);
 			i /= 10;
 		}
-		if(i < 1e7) { // count for leading zero
+		if (i < 1e7) { // count for leading zero
 			set.set(0);
 		}
 		for (int d = 0; d < 10; d++) {
@@ -260,21 +246,21 @@ public class Numbers {
 		}
 		return set.cardinality() == n;
 	}
-	
+
 	public static int maxPanDigit(int n) {
 		StringBuffer sb = new StringBuffer();
-		for(int i = n; i > 0; i--) {
+		for (int i = n; i > 0; i--) {
 			sb.append(i);
 		}
 		return Integer.parseInt(sb.toString());
 	}
-	
+
 	public static int minPanDigit(int n) {
 		StringBuffer sb = new StringBuffer();
-		for(int i = 1; i <= n; i++) {
+		for (int i = 1; i <= n; i++) {
 			sb.append(i);
 		}
 		return Integer.parseInt(sb.toString());
 	}
-	
+
 }
