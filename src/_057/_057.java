@@ -53,6 +53,7 @@ public class _057 {
 		System.out.println(count);
 	}
 	
+	@SuppressWarnings("unused")
 	private void solve() {
 		int count = 0;
 		for(int i = 0; i < 1000; i++) {
