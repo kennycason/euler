@@ -1,6 +1,11 @@
 package main;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import lib.Clock;
+import _001._001;
+import _002._002;
 
 public class Runner {
 
@@ -10,6 +15,7 @@ public class Runner {
 	}
 	
 	public void run() {
+
 		Clock clock = Clock.getInstance();
 		for(int i = 1; i < 500; i++) {
 			try {
