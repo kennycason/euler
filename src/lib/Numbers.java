@@ -33,9 +33,9 @@ public class Numbers {
 	}
 
 	public static long gcd(long a, long b) {
-		return b == 0 ? a : gcd(b, a % b); // Not bad for one line of code :)
+		return b == 0 ? a : gcd(b, a % b);
 	}
-
+	
 	public static String asFraction(long a, long b) {
 		long gcd = gcd(a, b);
 		return (a / gcd) + "/" + (b / gcd);
