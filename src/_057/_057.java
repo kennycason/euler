@@ -31,6 +31,8 @@ public class _057 {
 	/**
 	 * denominator is the sum of the previous numerator and the previous denominator.
 	 * numerator is the sum of the denominator and the previous denominator.
+	 * 
+	 * 3/2, (2 + 5)/5, (5 + 12)/12, ...
 	 */
 	private void faster() {
 		BigInteger[] denoms = new BigInteger[1000];

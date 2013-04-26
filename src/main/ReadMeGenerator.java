@@ -6,6 +6,7 @@ import java.io.PipedOutputStream;
 import java.io.PrintStream;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
 
 import lib.Clock;
 import lib.FileWriter;
@@ -28,16 +29,14 @@ public class ReadMeGenerator {
 			PipedOutputStream pipeOut = new PipedOutputStream();
 			PipedInputStream pipeIn = new PipedInputStream(pipeOut);
 			System.setOut(new PrintStream(pipeOut));
-			for (int i = 1; i < 500; i++) {
+			for(Entry<Integer, Class<?>> p : Runner.getProblems().entrySet()) {
 
 				Result r = new Result();
-				r.problem = i;
+				r.problem = p.getKey();
 				
 				Class<?> clazz = null;
-				try {
-					clazz = Class.forName("_" + pad(i) + "._" + pad(i));
-				} catch(ClassNotFoundException e) {	
-				}
+				clazz = p.getValue();
+
 				if (clazz == null) {
 					continue;
 				}
