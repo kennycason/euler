@@ -59,6 +59,8 @@ import _053._053;
 import _057._057;
 import _063._063;
 import _067._067;
+import _071._071;
+import _072._072;
 
 public class Runner {
 
@@ -141,6 +143,8 @@ public class Runner {
 		p.put(57, _057.class);
 		p.put(63, _063.class);	
 		p.put(67, _067.class);
+		p.put(71, _071.class);
+		p.put(72, _072.class);
 		return p;
 	}
 
