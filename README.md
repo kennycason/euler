@@ -2,7 +2,7 @@ Project Euler - Java
 =====
 
 My attempt at Project Euler problems using Java<br/>
-<img src="http://projecteuler.net/profile/kennycason.png?id=4"/>
+<img src="http://projecteuler.net/profile/kennycason.png?id=6"/>
 
 Current results (better view at: http://ken-soft.com/project-euler/)<br/>
 <table border="1" cellpadding="4">
