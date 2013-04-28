@@ -4,9 +4,10 @@ import java.awt.Color;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.io.PrintStream;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 
 import lib.Clock;
 import lib.FileWriter;
@@ -29,19 +30,22 @@ public class ReadMeGenerator {
 			PipedOutputStream pipeOut = new PipedOutputStream();
 			PipedInputStream pipeIn = new PipedInputStream(pipeOut);
 			System.setOut(new PrintStream(pipeOut));
-			for(Entry<Integer, Class<?>> p : Runner.getProblems().entrySet()) {
+			
+			Map<Integer, Class<?>> problems = Runner.getProblems();
+			List<Integer> keys = new LinkedList<Integer>(problems.keySet());
+			Collections.sort(keys);
+			
+			for(Integer key : keys) {
+				Class<?> p = problems.get(key);
 
 				Result r = new Result();
-				r.problem = p.getKey();
+				r.problem = key;
 				
-				Class<?> clazz = null;
-				clazz = p.getValue();
-
-				if (clazz == null) {
+				if (p == null) {
 					continue;
 				}
 				clock.start();
-				clazz.newInstance();
+				p.newInstance();
 
 				r.time = clock.elapsedMillis() / 1000.0;
 

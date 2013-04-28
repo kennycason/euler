@@ -1,8 +1,10 @@
 package main;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import lib.Clock;
 import _001._001;
@@ -72,12 +74,17 @@ public class Runner {
 	public void run() {
 		
 		Clock clock = Clock.getInstance();
-		for(Entry<Integer, Class<?>> p : getProblems().entrySet()) {
+		Map<Integer, Class<?>> problems = Runner.getProblems();
+		List<Integer> keys = new LinkedList<Integer>(problems.keySet());
+		Collections.sort(keys);
+		
+		for(Integer key : keys) {
 			try {
-			    System.out.println("Problem #" + p.getKey());
+				Class<?> p = problems.get(key);
+			    System.out.println("Problem #" + key);
 			    clock.start();
 			    System.out.print("Answer: ");
-			    p.getValue().newInstance();
+			    p.newInstance();
 				System.out.println("Time: " + clock.elapsedMillis() / 1000.0 + "s");
 				clock.reset();
 				System.out.println();
