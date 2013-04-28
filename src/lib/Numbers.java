@@ -251,6 +251,15 @@ public class Numbers {
 	public static boolean isPythagoreanTriplet(int a, int b, int c) {
 		return a < b && b < c && a * a + b * b == c * c;
 	}
+	
+	public static List<Integer> getDigits(long n) {
+		List<Integer> d = new LinkedList<Integer>();
+		while (n > 0) {
+			d.add((int)(n % 10));
+			n /= 10;
+		}
+		return d;
+	}
 
 	public static boolean is1To9PanDigit(int i) {
 		if (i < 1e8) {
