@@ -235,7 +235,7 @@ public class Numbers {
 	/*
 	 * DynamicAlgorithms.totient(int n) is faster
 	 */
-	public static long totient(int n) {
+	public static long totient(long n) {
 		double phin = 1;
 		List<Long> primeFactors = distinctPrimeFactors(n);
 		for (Long p : primeFactors) {

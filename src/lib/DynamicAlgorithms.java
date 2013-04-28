@@ -38,8 +38,7 @@ public class DynamicAlgorithms {
 		return pathSums;
 	}
 	
-	public static long totient(int n) {
-		long count = 0;
+	public static long[] totientSums(int n) {
 		long[] phi = Numbers.enumerate(0, n + 1);
 		for(int i = 2; i <= n; i++){
 		    if (phi[i] == i) {
@@ -47,9 +46,8 @@ public class DynamicAlgorithms {
 		            phi[j] = phi[j] / i * (i - 1);
 		        }
 		    }
-		    count += phi[i];
 		}
-		return count;
+		return phi;
 	}
 	
 }
