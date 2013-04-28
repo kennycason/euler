@@ -1,9 +1,13 @@
 package _045;
 
-public class _045 {
+import main.AbstractProblem;
+
+public class _045 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _045();
+		AbstractProblem p = new _045();
+		p.run();
+		System.out.println(p.answer());
 	}
 
 	/**
@@ -27,7 +31,7 @@ public class _045 {
 	 *  d/dn = (4n - 1) 
 	 *  d2/dn = 4
 	 */
-	public _045() {
+	public void run() {
 		long d2dt = 1;
 		long d2dp = 3;
 		long d2dh = 4;
@@ -59,7 +63,7 @@ public class _045 {
 			}
 
 			if (tn == pn && pn == hn && hn == n) {
-				System.out.println(n);
+				this.answer = n;
 				break;
 			}
 		}

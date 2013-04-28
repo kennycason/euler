@@ -3,18 +3,20 @@ package _187;
 import java.util.List;
 
 import lib.Sieve;
+import main.AbstractProblem;
 
 
 
 
-public class _187 {
-	
-	
+public class _187 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _187();
+		AbstractProblem p = new _187();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _187() {
+	public void run() {
 		long limit = 100000000;
 		int count = 0;
 		List<Long> primesList = Sieve.eratosthenes(55000000); // seems to be the upper bound of needed primes
@@ -28,7 +30,7 @@ public class _187 {
 				count++;
 			}
 		}
-		System.out.println(count);
+		this.answer = count;
 	}
 	
 }

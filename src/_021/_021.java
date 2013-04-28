@@ -4,22 +4,25 @@ import java.util.LinkedList;
 import java.util.List;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
-public class _021 {
+public class _021 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _021();
+		AbstractProblem p = new _021();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _021() {
+	public void run() {
 		List<Long> amicable = new LinkedList<Long>();
 		for(long i = 2; i < 10000; i++) {
 			if(isAmicable(i)) {
 				amicable.add(i);
 			}
 		}
-		System.out.println(Numbers.sum(amicable));
+		this.answer = Numbers.sum(amicable);
 	}
 	
 	private long d(long n) {

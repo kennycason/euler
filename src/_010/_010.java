@@ -1,15 +1,18 @@
 package _010;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
-public class _010 {
-	
+public class _010 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _010();
+		AbstractProblem p = new _010();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _010() {
+	public void run() {
 		int n = 2000000;
 		
 		long sum = 0;
@@ -18,7 +21,7 @@ public class _010 {
 				sum += i;
 			}
 		}
-		System.out.println(sum);
+		this.answer = sum;
 	}
 
 }

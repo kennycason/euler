@@ -1,15 +1,17 @@
 package _033;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
-public class _033 {
+public class _033 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _033();
+		AbstractProblem p = new _033();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _033() {
-
+	public void run() {
 		int nf = 1;
 		int df = 1;
 		int n2, d2;
@@ -32,8 +34,7 @@ public class _033 {
 				}
 			}
 		}
-		// System.out.println(nf + " / " + df);
-		System.out.println(df / Numbers.gcd(nf, df));
+		this.answer = df / Numbers.gcd(nf, df);
 	}
 	
 	private int strip(int n, int digit) {

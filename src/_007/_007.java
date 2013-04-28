@@ -1,14 +1,17 @@
 package _007;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
-public class _007 {
-	
+public class _007 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _007();
+		AbstractProblem p = new _007();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _007() {
+	public void run() {
 		int n = 10001;
 		
 		int found = 0;
@@ -16,7 +19,7 @@ public class _007 {
 			if(Numbers.isPrime(i)) {
 				found++;
 				if(found == n) {
-					System.out.println(i);
+					this.answer = i;
 					break;
 				}
 			}

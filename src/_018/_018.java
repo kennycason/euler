@@ -2,15 +2,18 @@ package _018;
 
 import lib.DynamicAlgorithms;
 import lib.IntTriangle;
+import main.AbstractProblem;
 
 
-public class _018 {
+public class _018 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _018();
+		AbstractProblem p = new _018();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _018() {
+	public void run() {
 		IntTriangle triangle = new IntTriangle(15);
 		triangle.setAll(
 				75,
@@ -34,8 +37,7 @@ public class _018 {
 		//System.out.println("Calculating Max Paths");
 		IntTriangle pathSums = DynamicAlgorithms.calculateMaxPaths(triangle);
 		//System.out.println(pathSums);
-		System.out.println(DynamicAlgorithms.getMaxPath(pathSums));
-		
+		this.answer = DynamicAlgorithms.getMaxPath(pathSums);
 	}
 
 }

@@ -5,18 +5,21 @@ import java.util.List;
 import java.util.Set;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
 
 
 
-public class _074 {
+public class _074 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _074();
+		AbstractProblem p = new _074();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _074() {
+	public void run() {
 		int count = 0;
 		for(long i = 1; i < 1000000; i++) {
 			long sum = sumFactorialOfDigits(Numbers.getDigits(i));
@@ -30,7 +33,7 @@ public class _074 {
 				count++;
 			}
 		}
-		System.out.println(count);
+		this.answer = count;
 	}
 	
 	private long sumFactorialOfDigits(List<Integer> digits) {

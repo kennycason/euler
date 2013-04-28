@@ -1,7 +1,9 @@
 package _008;
 
+import main.AbstractProblem;
 
-public class _008 {
+
+public class _008 extends AbstractProblem {
 	
 	private int[] num = {
 			7,3,1,6,7,1,7,6,5,3,1,3,3,0,6,2,4,9,1,9,2,2,5,1,1,9,6,7,4,4,2,6,5,7,4,7,4,2,3,5,5,3,4,9,1,9,4,9,3,4,
@@ -26,11 +28,14 @@ public class _008 {
 			7,1,6,3,6,2,6,9,5,6,1,8,8,2,6,7,0,4,2,8,2,5,2,4,8,3,6,0,0,8,2,3,2,5,7,5,3,0,4,2,0,7,5,2,9,6,3,4,5,0		
 	};
 	
+
 	public static void main(String[] args) {
-		new _008();
+		AbstractProblem p = new _008();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _008() {
+	public void run() {
 		int n = 5;
 		
 		int max = 0;
@@ -44,9 +49,7 @@ public class _008 {
 				 max = prod;
 			 }
 		}
-		System.out.println(max);
+		this.answer = max;
 	}
-	
-
 	
 }

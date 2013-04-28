@@ -1,22 +1,25 @@
 package _034;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
-public class _034 {
+public class _034 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _034();
+		AbstractProblem p = new _034();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _034() {
+	public void run() {
 		int sum = 0;
 		for(int i = 3; i < 100000; i++) {
 			if(digitsFactorialSum(i) == i) {
 				sum += i;
 			}
 		}
-		System.out.println(sum);
+		this.answer = sum;
 	}
 
 	private long digitsFactorialSum(int i) {

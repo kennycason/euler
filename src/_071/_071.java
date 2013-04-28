@@ -1,10 +1,14 @@
 package _071;
 
+import main.AbstractProblem;
 
-public class _071 {
+
+public class _071 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _071();
+		AbstractProblem p = new _071();
+		p.run();
+		System.out.println(p.answer());
 	}
 
 	/**
@@ -26,7 +30,7 @@ public class _071 {
 	 * such that nf/df < n/d 
 	 * nf*d < n*df
 	 */
-	public _071() {
+	public void run() {
 		long a = 3;	// upper threshold
 		long b = 7;
 		long nf = 0;	// best
@@ -40,7 +44,7 @@ public class _071 {
 			}
 		}
 		// System.out.println(nf + "/" + df);
-		System.out.println(nf);
+		this.answer = nf;
 	}
 	
 

@@ -2,16 +2,19 @@ package _046;
 
 import lib.Numbers;
 import lib.Primes;
+import main.AbstractProblem;
 
 
 
-public class _046 {
+public class _046 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _046();
+		AbstractProblem p = new _046();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _046() {
+	public void run() {
 		for(int i = 9; ; i += 2) {
 			if(Numbers.isComposite(i)) {
 				boolean found = false;
@@ -32,7 +35,7 @@ public class _046 {
 					}
 				}
 				if(!found) {
-					System.out.println(i);
+					this.answer = i;
 					break;
 				}
 			}

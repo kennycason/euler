@@ -2,17 +2,20 @@ package _036;
 
 import lib.Numbers;
 import lib.Strings;
+import main.AbstractProblem;
 
 
 
 
-public class _036 {
+public class _036 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _036();
+		AbstractProblem p = new _036();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _036() {
+	public void run() {
 		int sum = 0;
 		for(int i = 0; i < 1000000; i++) {
 			if(Numbers.isPalindrome(i) && 
@@ -20,7 +23,7 @@ public class _036 {
 				sum += i;
 			}
 		}
-		System.out.println(sum);
+		this.answer = sum;
 	}
 
 }

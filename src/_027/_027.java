@@ -1,15 +1,18 @@
 package _027;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
-public class _027 {
+public class _027 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _027();
+		AbstractProblem p = new _027();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _027() {
+	public void run() {
 		int maxA = 0;
 		int maxB = 0;
 		int max = 0;
@@ -25,7 +28,7 @@ public class _027 {
 				
 			}	
 		}
-		System.out.println(maxA * maxB);
+		this.answer = maxA * maxB;
 	}
 	
 	private int consecutivePrimes(int a, int b) {

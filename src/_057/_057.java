@@ -3,10 +3,14 @@ package _057;
 import java.math.BigInteger;
 import java.util.Arrays;
 
-public class _057 {
+import main.AbstractProblem;
+
+public class _057 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _057();
+		AbstractProblem p = new _057();
+		p.run();
+		System.out.println(p.answer());
 	}
 
 	/**
@@ -23,7 +27,7 @@ public class _057 {
 	 *  						= 1 + 1/(2 + 1/(2 + 1/(5/2))) = 1 + 1/(2 + 1/(2 + 2/5))) 
 	 *  						= 1 + 1/(2 + 1/(12/5)) = 1 + 1/(2 + 5/12) = 1 + 1/(29/12) = 1 + 12/29 = 41/29
 	 */
-	public _057() {
+	public void run() {
 		// solve();
 		faster();
 	}
@@ -52,7 +56,7 @@ public class _057 {
 				count++;
 			}
 		}
-		System.out.println(count);
+		this.answer = count;
 	}
 	
 	@SuppressWarnings("unused")
@@ -67,7 +71,7 @@ public class _057 {
 			 }
 			 // System.out.println(num + "/" + denom);
 		}
-		System.out.println(count);
+		this.answer = count;
 	}
 	
 	@SuppressWarnings("unused")

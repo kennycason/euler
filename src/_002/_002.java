@@ -3,14 +3,17 @@ package _002;
 import java.util.List;
 
 import lib.Sequence;
+import main.AbstractProblem;
 
-public class _002 {
+public class _002 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _002();
+		AbstractProblem p = new _002();
+		p.run();
+		System.out.println(p.answer());
 	}
-
-	public _002() {
+	
+	public void run() {
 		int max = 4000000;
 		
 		List<Long> seq = Sequence.fibonacciMaxTerm(max);
@@ -20,7 +23,7 @@ public class _002 {
 				sum += i;
 			}
 		}
-		System.out.println(sum);
+		this.answer = sum;
 	}
 	
 }

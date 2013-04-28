@@ -5,16 +5,18 @@ import java.util.LinkedList;
 import java.util.List;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
-public class _023 {
+public class _023 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _023();
+		AbstractProblem p = new _023();
+		p.run();
+		System.out.println(p.answer());
 	}
 	
-
-	public _023() {
+	public void run() {
 		List<Long> abundants = new LinkedList<Long>();
 		for(long i = 12; i <= 28123; i++) {
 			if(Numbers.isAbundant(i)) {
@@ -38,8 +40,7 @@ public class _023 {
 				sum += i;
 			}
 		}
-		System.out.println(sum);
+		this.answer = sum;
 	}
-	
 
 }

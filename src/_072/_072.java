@@ -1,20 +1,23 @@
 package _072;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
 
 
-public class _072 {
+public class _072 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _072();
+		AbstractProblem p = new _072();
+		p.run();
+		System.out.println(p.answer());
 	}
 
 	/**
 	 * refer to notes.txt
 	 */
-	public _072() {
+	public void run() {
 		int n = 1000000;
 		long count = 0;
 //		for(int i = 2; i <= n; i++) {
@@ -35,7 +38,7 @@ public class _072 {
 		    }
 		    count += phi[i];
 		}
-		System.out.println(count);
+		this.answer = count;
 	}
 	
 }

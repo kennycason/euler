@@ -4,15 +4,19 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import main.AbstractProblem;
 
-public class _019 {
+
+public class _019 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _019();
+		AbstractProblem p = new _019();
+		p.run();
+		System.out.println(p.answer());
 	}
 
 	@SuppressWarnings("deprecation")
-	public _019() {
+	public void run() {
 		 GregorianCalendar startDate = new GregorianCalendar(1901, 1 - 1, 1);
 		 GregorianCalendar endDate = new GregorianCalendar(2000, 12 - 1, 1);
 		
@@ -27,7 +31,7 @@ public class _019 {
 				num++;
 			}
 		}
-		System.out.println(num);
+		this.answer = num;
 	}
 
 }

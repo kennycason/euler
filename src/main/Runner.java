@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.Color;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import lib.Clock;
+import lib.FileWriter;
 import _001._001;
 import _002._002;
 import _003._003;
@@ -72,94 +74,173 @@ public class Runner {
 
 	public static void main(String[] args) {
 		Runner r = new Runner();
-		r.run(10);
+		r.run();
 	}
 	
-	public void run(int i) {
+	public void run() {
 		
 		Clock clock = Clock.getInstance();
-		Map<Integer, Class<?>> problems = Runner.getProblems();
+		Map<Integer, AbstractProblem> problems = Runner.getProblems();
 		List<Integer> keys = new LinkedList<Integer>(problems.keySet());
 		Collections.sort(keys);
-		
+
+		List<Result> results = new LinkedList<Result>();
+		for(Integer i : keys) {
 			try {
-				Class<?> p = problems.get(i);
+				Result r = new Result();
+				r.problem = i;
+				AbstractProblem p = problems.get(i);
 			    System.out.println("Problem #" + i);
-			    clock.start();
-			    System.out.print("Answer: ");
-			    p.newInstance();
-				System.out.println("Time: " + clock.elapsedMillis() / 1000.0 + "s");
-				clock.reset();
+			    clock.reset();
+			    p.run();
+			    clock.stop();
+			    r.answer = p.answer();
+			    System.out.println("Answer: " + p.answer());
+			    r.time = clock.elapsedMillis() / 1000.0;
+				System.out.println("Time: " + r.time + "s");
 				System.out.println();
+				results.add(r);
 			} catch (Exception e) {
 				// Pokemon, gotta catch'em all!
 			} 
+		}
+		
+		FileWriter writer = new FileWriter("README.md");
+		writer.write(buildHtml(results));
 
 	}
 	
-	public static Map<Integer, Class<?>> getProblems() {
-		Map<Integer, Class<?>> p = new HashMap<Integer, Class<?>>();
-		p.put(1, _001.class);
-		p.put(2, _002.class);
-		p.put(3, _003.class);
-		p.put(4, _004.class);
-		p.put(5, _005.class);
-		p.put(6, _006.class);
-		p.put(7, _007.class);
-		p.put(8, _008.class);
-		p.put(9, _009.class);
-		p.put(10, _010.class);
-		p.put(11, _011.class);
-		p.put(12, _012.class);
-		p.put(13, _013.class);
-		p.put(14, _014.class);
-		p.put(15, _015.class);
-		p.put(16, _016.class);
-		p.put(17, _017.class);
-		p.put(18, _018.class);
-		p.put(19, _019.class);
-		p.put(20, _020.class);
-		p.put(21, _021.class);
-		p.put(22, _022.class);
-		p.put(23, _023.class);
-		p.put(24, _024.class);
-		p.put(25, _025.class);
-		p.put(26, _026.class);
-		p.put(27, _027.class);
-		p.put(28, _028.class);
-		p.put(29, _029.class);
-		p.put(30, _030.class);
-		p.put(31, _031.class);
-		p.put(32, _032.class);
-		p.put(33, _033.class);
-		p.put(34, _034.class);
-		p.put(35, _035.class);
-		p.put(36, _036.class);
-		p.put(37, _037.class);
-		p.put(38, _038.class);
-		p.put(39, _039.class);
-		p.put(40, _040.class);
-		p.put(41, _041.class);
-		p.put(42, _042.class);
-		p.put(43, _043.class);
-		p.put(44, _044.class);
-		p.put(45, _045.class);
-		p.put(46, _046.class);
-		p.put(47, _047.class);
-		p.put(48, _048.class);
-		p.put(49, _049.class);
-		p.put(50, _050.class);
-		p.put(53, _053.class);
-		p.put(55, _055.class);
-		p.put(57, _057.class);
-		p.put(63, _063.class);	
-		p.put(67, _067.class);
-		p.put(71, _071.class);
-		p.put(72, _072.class);
-		p.put(73, _073.class);
-		p.put(74, _074.class);
-		p.put(214, _214.class);
+	public static Map<Integer, AbstractProblem> getProblems() {
+		Map<Integer, AbstractProblem> p = new HashMap<Integer, AbstractProblem>();
+		p.put(1, new _001());
+		p.put(2, new _002());
+		p.put(3, new _003());
+		p.put(4, new _004());
+		p.put(5, new _005());
+		p.put(6, new _006());
+		p.put(7, new _007());
+		p.put(8, new _008());
+		p.put(9, new _009());
+		p.put(10, new _010());
+		p.put(11, new _011());
+		p.put(12, new _012());
+		p.put(13, new _013());
+		p.put(14, new _014());
+		p.put(15, new _015());
+		p.put(16, new _016());
+		p.put(17, new _017());
+		p.put(18, new _018());
+		p.put(19, new _019());
+		p.put(20, new _020());
+		p.put(21, new _021());
+		p.put(22, new _022());
+		p.put(23, new _023());
+		p.put(24, new _024());
+		p.put(25, new _025());
+		p.put(26, new _026());
+		p.put(27, new _027());
+		p.put(28, new _028());
+		p.put(29, new _029());
+		p.put(30, new _030());
+		p.put(31, new _031());
+		p.put(32, new _032());
+		p.put(33, new _033());
+		p.put(34, new _034());
+		p.put(35, new _035());
+		p.put(36, new _036());
+		p.put(37, new _037());
+		p.put(38, new _038());
+		p.put(39, new _039());
+		p.put(40, new _040());
+		p.put(41, new _041());
+		p.put(42, new _042());
+		p.put(43, new _043());
+		p.put(44, new _044());
+		p.put(45, new _045());
+		p.put(46, new _046());
+		p.put(47, new _047());
+		p.put(48, new _048());
+		p.put(49, new _049());
+		p.put(50, new _050());
+		p.put(53, new _053());
+		p.put(55, new _055());
+		p.put(57, new _057());
+		p.put(63, new _063());	
+		p.put(67, new _067());
+		p.put(71, new _071());
+		p.put(72, new _072());
+		p.put(73, new _073());
+		p.put(74, new _074());
+		p.put(214, new _214());
 		return p;
 	}
 
+	private String buildHtml(List<Result> results) {
+		StringBuffer sb = new StringBuffer();
+		sb.append("Project Euler - Java\n"
+				+ "=====\n\n"
+				+ "My attempt at Project Euler problems using Java<br/>\n"
+				+ "<img src=\"http://projecteuler.net/profile/kennycason.png?id=2\"/>\n\n"
+				+ "Current results (better view at: http://ken-soft.com/project-euler/)<br/>\n");
+		sb.append("<table border=\"1\" cellpadding=\"4\">\n<tr><td></td><td>Answer</td><td>Time</td><td>@Source</td</tr>\n");
+		for (Result r : results) {
+			
+			String url = "https://github.com/kennycason/euler/blob/master/src/_" + pad(r.problem) + "/_" + pad(r.problem) + ".java";
+			
+			sb.append("<tr><td><b>");
+			sb.append("#" + r.problem);
+			sb.append("</b></td><td>");
+			sb.append(r.answer);
+			sb.append("</td><td style=\"background-color:#"
+					+ toHex(scaleRedGreen(r.time, 2.0)) + "\">");
+			sb.append(r.time + "s");
+			sb.append("</td><td>");
+			sb.append("<a href=\"" + url + "\" target=\"_blank\" style=\"text-decoration: none; color: black;\">Link</a>");
+			sb.append("</td></tr>\n");
+		}
+		sb.append("</table>");
+		return sb.toString();
+	}
+
+	private String pad(int i) {
+		if (i < 10) {
+			return "00" + i;
+		}
+		if (i < 100) {
+			return "0" + i;
+		}
+		return String.valueOf(i);
+	}
+
+	private Color scaleRedGreen(double val, double max) {
+		if(val > max) {
+			val = max;
+		}
+		int r = (int) ((255 * (max - val)) / max);
+		int g = (int) ((255 * val) / max);
+		return new Color(255 - r, 255 - g, 0);
+	}
+
+	public String toHex(Color c) {
+		String hexString = Integer.toHexString(c.getRGB() & 0xffffff);
+		while (hexString.length() < 6) {
+			hexString = "0" + hexString;
+		}
+		return hexString;
+	}
+
+	private class Result {
+
+		public int problem;
+
+		public Object answer;
+
+		public double time;
+
+		public String toString() {
+			return "Problem #" + problem + " Answer:" + answer + " Time: "
+					+ time + "s";
+		}
+
+	}
 }

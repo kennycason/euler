@@ -1,13 +1,17 @@
 package _026;
 
+import main.AbstractProblem;
 
-public class _026 {
+
+public class _026 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _026();
+		AbstractProblem p = new _026();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _026() {
+	public void run() {
 		/**
 		 * observational notes note that the maximum recurring cycle length of
 		 * 1/d is d-1
@@ -35,7 +39,7 @@ public class _026 {
 				sequenceLength = position - foundRemainders[value];
 			}
 		}
-		System.out.println(sequenceLength + 1); 
+		this.answer = sequenceLength + 1; 
 	}
 
 }

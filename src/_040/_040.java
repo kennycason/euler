@@ -1,15 +1,19 @@
 package _040;
 
+import main.AbstractProblem;
 
 
 
-public class _040 {
+
+public class _040 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _040();
+		AbstractProblem p = new _040();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _040() {
+	public void run() {
 		StringBuffer sb = new StringBuffer();
 		int i = 1;
 		while(sb.length() < 1000000) {
@@ -21,7 +25,7 @@ public class _040 {
 		for(int p = 1; p <= 1000000; p *= 10) {
 			product *= Integer.parseInt(String.valueOf(n.charAt(p - 1)));
 		}
-		System.out.println(product);
+		this.answer = product;
 	}
 
 }

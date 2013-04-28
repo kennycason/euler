@@ -1,11 +1,15 @@
 package _012;
 
+import main.AbstractProblem;
 
 
-public class _012 {
-	
+
+public class _012 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _012();
+		AbstractProblem p = new _012();
+		p.run();
+		System.out.println(p.answer());
 	}
 
 	/** 
@@ -16,7 +20,7 @@ public class _012 {
 	 * D(28) = (2+1) * (1+1) = 3 * 2 = 6 
 	 *  + prime number lookup array
 	 */
-	public _012() {
+	public void run() {
 		int numDivisors = 500;
 		
 		int triangle = 1;
@@ -36,8 +40,7 @@ public class _012 {
 				divisors--;
 			}
 		}
-		System.out.println(triangle);
-		
+		this.answer = triangle;
 	}
 	 
 }

@@ -2,9 +2,11 @@ package _013;
 
 import java.math.BigInteger;
 
+import main.AbstractProblem;
 
 
-public class _013 {
+
+public class _013 extends AbstractProblem {
 	
 	private String[] numbers = {
 			"37107287533902102798797998220837590246510135740250",
@@ -110,15 +112,17 @@ public class _013 {
 	};
 	
 	public static void main(String[] args) {
-		new _013();
+		AbstractProblem p = new _013();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _013() {
+	public void run() {
 		BigInteger sum = new BigInteger("0");
 		for(int i = 0; i < numbers.length; i++) {
 			sum = sum.add(new BigInteger(numbers[i]));
 		}
-		System.out.println(sum.toString().substring(0, 10));
+		this.answer = sum.toString().substring(0, 10);
 	}
 	 
 }

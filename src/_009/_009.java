@@ -1,16 +1,18 @@
 package _009;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
-public class _009 {
-	
-	
+public class _009 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _009();
+		AbstractProblem p = new _009();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _009() {
+	public void run() {
 		int max = 1000;
 		
 		for(int a = 0; a <= max; a++) {
@@ -18,14 +20,12 @@ public class _009 {
 				for(int c = 0; c <= max; c++) {
 					if(a + b + c == max) {
 						if(Numbers.isPythagoreanTriplet(a, b, c)) {
-							System.out.println(a * b * c);
+							this.answer = a * b * c;
 						}
 					}
 				}
 			}
 		}
 	}
-	
-
 	
 }

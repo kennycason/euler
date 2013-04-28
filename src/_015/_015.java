@@ -1,14 +1,16 @@
 package _015;
 
 import lib.Probability;
+import main.AbstractProblem;
 
 
 
-public class _015 {
-	
-	
+public class _015 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _015();
+		AbstractProblem p = new _015();
+		p.run();
+		System.out.println(p.answer());
 	}
 
 	/*
@@ -42,10 +44,9 @@ public class _015 {
 	 *   (20*2 20), 40 choose 20 = 40! / 20!(40-20)! = ? 
 	 *   it's a big number lets calculate it :P
 	 */
-	public _015() {
+	public void run() {
 		int dim = 20;
-		
-		System.out.println(Probability.bigCombination(dim * 2, dim));
+		this.answer = Probability.bigCombination(dim * 2, dim);
 	}
 	
 }

@@ -1,22 +1,26 @@
 package _030;
 
+import main.AbstractProblem;
 
 
 
-public class _030 {
+
+public class _030 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _030();
+		AbstractProblem p = new _030();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _030() {
+	public void run() {
 		int sum = 0;
 		for(int i = 2; i < 250000; i++)  {
 			if(match(i)) {
 				sum += i;
 			}
 		}
-		System.out.println(sum);
+		this.answer = sum;
 	}
 	
 	

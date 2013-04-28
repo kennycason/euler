@@ -1,14 +1,18 @@
 package _063;
 
+import main.AbstractProblem;
 
 
-public class _063 {
+
+public class _063 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _063();
+		AbstractProblem p = new _063();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _063() {
+	public void run() {
 		int count = 0;
 		for(int b = 1; b < 10; b++) {
 			for(int p = 1; p < 25; p++) {
@@ -22,7 +26,7 @@ public class _063 {
 				}
 			}		
 		}
-		System.out.println(count);
+		this.answer = count;
 	}
 
 }

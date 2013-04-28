@@ -4,17 +4,19 @@ import java.util.LinkedList;
 import java.util.List;
 
 import lib.Sequence;
+import main.AbstractProblem;
 
 
 
-public class _014 {
-	
-	
+public class _014 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _014();
+		AbstractProblem p = new _014();
+		p.run();
+		System.out.println(p.answer());
 	}
-
-	public _014() {
+	
+	public void run() {
 		int n = 1000000;
 		
 		int maxi = -1;
@@ -29,7 +31,7 @@ public class _014 {
 			}
 		}
 		//System.out.println(maxi + ": (" + maxSeq.size() + ") " + maxSeq);
-		System.out.println(maxi);
+		this.answer = maxi;
 	}
 	
 }

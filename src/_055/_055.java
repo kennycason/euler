@@ -5,18 +5,20 @@ import java.util.LinkedList;
 import java.util.List;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
 
 
-public class _055 {
-	
-	
+public class _055 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _055();
+		AbstractProblem p = new _055();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _055() {
+	public void run() {
 		long count = 0;
 		long limit = 10000;
 		for(long i = 10; i < limit; i++) {
@@ -38,7 +40,7 @@ public class _055 {
 				count++;
 			}
 		}
-		System.out.println(count);
+		this.answer = count;
 	}
 	
 }

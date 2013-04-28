@@ -1,14 +1,17 @@
 package _004;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
-public class _004 {
-	
+public class _004 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _004();
+		AbstractProblem p = new _004();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _004() {
+	public void run() {
 		int digits = 3;
 		
 		int upper = (int)Math.pow(10, digits) - 1;
@@ -22,8 +25,7 @@ public class _004 {
 				}
 			}		
 		}
-		System.out.println(max);
+		this.answer = max;
 	}
-	
 	
 }

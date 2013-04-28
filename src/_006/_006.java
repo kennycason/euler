@@ -1,14 +1,18 @@
 package _006;
 
-public class _006 {
-	
+import main.AbstractProblem;
+
+public class _006 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _006();
+		AbstractProblem p = new _006();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _006() {
+	public void run() {
 		int n = 100;
-		System.out.println(squareOfSums(n) - sumOfSquares(n));
+		this.answer = squareOfSums(n) - sumOfSquares(n);
 	}
 	
 	private long sumOfSquares(int n) {

@@ -5,15 +5,18 @@ import java.util.LinkedList;
 import java.util.List;
 
 import lib.FileReader;
+import main.AbstractProblem;
 
 
-public class _022 {
+public class _022 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _022();
+		AbstractProblem p = new _022();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _022() {
+	public void run() {
 		List<String> names = loadFromFile("_022/names.txt");
 		Collections.sort(names);
 		long sum = 0;
@@ -23,7 +26,7 @@ public class _022 {
 			// System.out.println(i + ": " + name + " " + score(name) + " = " + i * score(name));
 			i++;
 		}
-		System.out.println(sum);
+		this.answer = sum;
 	}
 	
 	private int score(String name) {

@@ -3,15 +3,17 @@ package _043;
 import lib.Numbers;
 import lib.Primes;
 import lib.Sequence;
+import main.AbstractProblem;
 
-public class _043 {
+public class _043 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _043();
+		AbstractProblem p = new _043();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _043() {
-
+	public void run() {
 		long sum = 0;
 		for (String s : Sequence.permutation("0123456789")) {
 			long i = Long.parseLong(s);
@@ -31,7 +33,7 @@ public class _043 {
 				sum += i;
 			}
 		}
-		System.out.println(sum);
+		this.answer = sum;
 	}
 
 }

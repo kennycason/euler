@@ -4,16 +4,18 @@ import java.util.List;
 
 import lib.DynamicAlgorithms;
 import lib.Sieve;
+import main.AbstractProblem;
 
 
-public class _214 {
-	
-	
+public class _214 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _214();
+		AbstractProblem p = new _214();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _214() {
+	public void run() {
 		long sum = 0;
 		long[] totientSums = DynamicAlgorithms.totientSums(40000000 - 1);
 		List<Long> primes = Sieve.eratosthenes(40000000 - 1);
@@ -28,7 +30,7 @@ public class _214 {
 				sum += p;
 			}
 		}
-		System.out.println(sum);
+		this.answer = sum;
 	}
 	
 }

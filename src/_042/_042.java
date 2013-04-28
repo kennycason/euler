@@ -6,17 +6,20 @@ import java.util.Map;
 import java.util.Set;
 
 import lib.FileReader;
+import main.AbstractProblem;
 
 
 
 
-public class _042 {
+public class _042 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _042();
+		AbstractProblem p = new _042();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _042() {
+	public void run() {
 		Map<String, Integer> words = loadFromFile("_042/words.txt");
 		int maxScore = getMaxWordScore(words);
 		Set<Integer> triangleNumbers = generateTriangleNumbers(maxScore);
@@ -26,7 +29,7 @@ public class _042 {
 				n++;
 			}
 		}
-		System.out.println(n);
+		this.answer = n;
 	}
 
 	private Set<Integer> generateTriangleNumbers(int maxScore) {

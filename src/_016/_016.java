@@ -3,15 +3,17 @@ package _016;
 import java.math.BigInteger;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
-public class _016 {
-	
-	
+public class _016 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _016();
+		AbstractProblem p = new _016();
+		p.run();
+		System.out.println(p.answer());
 	}
 	
-	public _016() {
+	public void run() {
 		int exp = 1000;
 		BigInteger n = Numbers.bigPow(2, exp);
 		String digits = n.toString();
@@ -19,7 +21,7 @@ public class _016 {
 		for(int i = 0; i < digits.length(); i++) {
 			sum += Integer.valueOf(String.valueOf((digits.charAt(i))));
 		}
-		System.out.println(sum);
+		this.answer = sum;
 	}
 	
 }

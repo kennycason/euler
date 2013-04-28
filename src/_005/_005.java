@@ -1,15 +1,19 @@
 package _005;
 
-public class _005 {
-	
+import main.AbstractProblem;
+
+public class _005 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _005();
+		AbstractProblem p = new _005();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _005() {
+	public void run() {
 		for(int i = 20; i < Integer.MAX_VALUE; i++) {
 			if(divisable(i)) {
-				System.out.println(i);
+				this.answer = i;
 				break;
 			}
 		}

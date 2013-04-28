@@ -2,15 +2,19 @@ package _025;
 
 import java.math.BigInteger;
 
+import main.AbstractProblem;
 
-public class _025 {
-	
+
+public class _025 extends AbstractProblem {
+
 	public static void main(String[] args) {
-		new _025();
+		AbstractProblem p = new _025();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _025() {
-		System.out.println(fibonacciFirstOccurenceOfLength(1000));
+	public void run() {
+		this.answer = fibonacciFirstOccurenceOfLength(1000);
 	}	
 
 	public int fibonacciFirstOccurenceOfLength(int length) {

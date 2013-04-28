@@ -1,18 +1,22 @@
 package _028;
 
+import main.AbstractProblem;
 
 
-public class _028 {
+
+public class _028 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _028();
+		AbstractProblem p = new _028();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _028() {
+	public void run() {
 		int dim = 1001;
 		int[][] mat = drawSpiralMatrix(dim);
 		int sum = sumDiagonals(mat);
-		System.out.println(sum);
+		this.answer = sum;
 	}
 	
 	private int sumDiagonals(int[][] mat) {

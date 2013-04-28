@@ -1,23 +1,27 @@
 package _031;
 
+import main.AbstractProblem;
 
-public class _031 {
+
+public class _031 extends AbstractProblem {
 	
 	private int max;
 
 	private int[] coins = { 1, 2, 5, 10, 20, 50, 100, 200 };
 
 	public static void main(String[] args) {
-		new _031();
+		AbstractProblem p = new _031();
+		p.run();
+		System.out.println(p.answer());
 	}
 
 	/**
 	 * created a general solution in case I have to do similar problem later
 	 */
-	public _031() {
+	public void run() {
 		max = 200;
 		// System.out.println(count(max, coins.length - 1));
-		System.out.println(dynamic());
+		this.answer = dynamic();
 	}
 
 	private int dynamic() {

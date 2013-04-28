@@ -1,14 +1,18 @@
 package _039;
 
+import main.AbstractProblem;
 
 
-public class _039 {
+
+public class _039 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _039();
+		AbstractProblem p = new _039();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _039() {
+	public void run() {
 		int maxN = 0;
 		int maxSoln = 0;
 		
@@ -29,7 +33,7 @@ public class _039 {
 				maxN = n;
 			}
 		}
-		System.out.println(maxN);
+		this.answer = maxN;
 	}
 
 }

@@ -1,7 +1,9 @@
 package _011;
 
+import main.AbstractProblem;
 
-public class _011 {
+
+public class _011 extends AbstractProblem {
 	
 	private int dim = 20;
 	
@@ -27,12 +29,14 @@ public class _011 {
 			{20,73,35,29,78,31,90, 1,74,31,49,71,48,86,81,16,23,57, 5,54},
 			{ 1,70,54,71,83,51,54,69,16,92,33,48,61,43,52, 1,89,19,67,48}	
 	};
-	
-	public static void main(String[] args) {
-		new _011();
-	}
 
-	public _011() {
+	public static void main(String[] args) {
+		AbstractProblem p = new _011();
+		p.run();
+		System.out.println(p.answer());
+	}
+	
+	public void run() {
 		int n = 4;
 		
 		long max = 0;
@@ -86,7 +90,7 @@ public class _011 {
 			}	
 		}
 		
-		System.out.println(max);
+		this.answer = max;
 	}
 
 }

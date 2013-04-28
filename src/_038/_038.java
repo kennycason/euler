@@ -1,15 +1,18 @@
 package _038;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
-public class _038 {
+public class _038 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _038();
+		AbstractProblem p = new _038();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _038() {
+	public void run() {
 		long num, max = 918273645;
 		// highest value given in demo
 		
@@ -31,7 +34,7 @@ public class _038 {
 				}
 			}
 		}
-		System.out.println(max);
+		this.answer = max;
 	}
-
+	
 }

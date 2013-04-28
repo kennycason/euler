@@ -5,20 +5,24 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
+import main.AbstractProblem;
 
 
-public class _029 {
+
+public class _029 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _029();
+		AbstractProblem p = new _029();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _029() {
+	public void run() {
 		HashSet<Double> comb = combinations(2, 100);
 		List<Double> combset = new LinkedList<Double>();
 		combset.addAll(comb);
 		Collections.sort(combset);
-		System.out.println(combset.size());
+		this.answer = combset.size();
 	}
 	
 	

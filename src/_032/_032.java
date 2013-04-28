@@ -5,14 +5,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
-public class _032 {
+public class _032 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _032();
+		AbstractProblem p = new _032();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _032() {
+	public void run() {
 		Set<Integer> products = new HashSet<Integer>();
 		//  when the a or b is 4 digits the product will be at least 4 digits 
 		int min = 123;
@@ -24,7 +27,7 @@ public class _032 {
 				}
 			}
 		}
-		System.out.println(Numbers.sum(products));
+		this.answer = Numbers.sum(products);
 	}
 
 	private boolean is1To9PanDigit(int a, int b) {

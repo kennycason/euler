@@ -4,15 +4,18 @@ import java.util.List;
 
 import lib.Lexographic;
 import lib.Numbers;
+import main.AbstractProblem;
 
 
-public class _035 {
+public class _035 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _035();
+		AbstractProblem p = new _035();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _035() {
+	public void run() {
 		List<Long> primes = Numbers.primes(999999);
 		int num = 0;
 		boolean allPrime = true;
@@ -29,8 +32,7 @@ public class _035 {
 				num++;
 			}
 		}
-		System.out.println(num);
+		this.answer = num;
 	}
-
 
 }

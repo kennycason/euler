@@ -1,12 +1,17 @@
 package _001;
 
-public class _001 {
+import main.AbstractProblem;
+
+public class _001 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _001();
+		AbstractProblem p = new _001();
+		p.run();
+		System.out.println(p.answer());
 	}
-
-	public _001() {
+	
+	public void run() {
+		
 		int max = 1000;
 		
 		int sum = 0;
@@ -15,7 +20,7 @@ public class _001 {
 				sum += i;
 			}
 		}
-		System.out.println(sum);
+		this.answer = sum;
 	}
 	
 }

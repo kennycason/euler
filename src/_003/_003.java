@@ -4,17 +4,20 @@ import java.util.List;
 
 import lib.ListAlgo;
 import lib.Numbers;
+import main.AbstractProblem;
 
-public class _003 {
+public class _003 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _003();
+		AbstractProblem p = new _003();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _003() {
+	public void run() {
 		long n = 600851475143l;
 		List<Long> seq = Numbers.distinctPrimeFactors(n);
-		System.out.println(ListAlgo.max(seq));
+		this.answer = ListAlgo.max(seq);
 	}
 	
 }

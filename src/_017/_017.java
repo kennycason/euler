@@ -1,7 +1,9 @@
 package _017;
 
+import main.AbstractProblem;
 
-public class _017 {
+
+public class _017 extends AbstractProblem {
 	
 	private String[] num1_20 = {
 			"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", 
@@ -10,11 +12,13 @@ public class _017 {
 	};
 	
 	public static void main(String[] args) {
-		new _017();
+		AbstractProblem p = new _017();
+		p.run();
+		System.out.println(p.answer());
 	}
 
 	// could do pattern analysis, but i'm going to write a generic number writer
-	public _017() {
+	public void run() {
 		int length = 0;
 		for(int i = 1; i <= 1000; i++) {
 			StringBuffer sb = new StringBuffer();
@@ -22,7 +26,7 @@ public class _017 {
 			String num = sb.toString().replace(" ", "").trim();
 			length += num.length();
 		}
-		System.out.println(length);
+		this.answer = length;
 	}
 	
 	

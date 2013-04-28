@@ -8,15 +8,18 @@ import java.util.List;
 
 import lib.DynamicAlgorithms;
 import lib.IntTriangle;
+import main.AbstractProblem;
 
 
-public class _067 {
+public class _067 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _067();
+		AbstractProblem p = new _067();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _067() {
+	public void run() {
 	
 		IntTriangle triangle = new IntTriangle(100);
 		
@@ -26,7 +29,7 @@ public class _067 {
 		//System.out.println(triangle);
 		IntTriangle pathSums = DynamicAlgorithms.calculateMaxPaths(triangle);
 		//System.out.println(pathSums);
-		System.out.println(DynamicAlgorithms.getMaxPath(pathSums));
+		this.answer = DynamicAlgorithms.getMaxPath(pathSums);
 		
 	}
 	

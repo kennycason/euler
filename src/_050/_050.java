@@ -4,16 +4,19 @@ import java.util.List;
 
 import lib.Numbers;
 import lib.Primes;
+import main.AbstractProblem;
 
 
 
-public class _050 {
+public class _050 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _050();
+		AbstractProblem p = new _050();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _050() {
+	public void run() {
 		// faster approach
 		int max = 999999;
 		// first 546 primes form the longest consecutive sum that is less than 1,000,000 is of size 546
@@ -25,7 +28,7 @@ public class _050 {
 					sum += Primes.PRIME_TABLE[i];
 				}
 				if (sum <= max && Numbers.isPrime(sum)) {
-					System.out.println(sum);
+					this.answer = sum;
 					return;
 				}
 			}

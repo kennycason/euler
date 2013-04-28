@@ -7,15 +7,18 @@ import java.util.Set;
 
 import lib.Numbers;
 import lib.Sequence;
+import main.AbstractProblem;
 
 
-public class _049 {
+public class _049 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _049();
+		AbstractProblem p = new _049();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _049() {
+	public void run() {
 		Set<Long> orig = Sequence.permutation(1487l);	
 		List<Long> perms = new ArrayList<Long>();
 		for(long n = 1000; n < 10000; n++) {
@@ -34,7 +37,7 @@ public class _049 {
 				}
 				if(perms.contains(perm + 3330) && perms.contains(perm + 6660)) {
 					if(Numbers.isPrime(perm + 3330) && Numbers.isPrime(perm + 6660)) {
-						System.out.println(perm + "" + (perm + 3330) + "" + (perm + 6660));
+						this.answer = perm + "" + (perm + 3330) + "" + (perm + 6660);
 						return;
 					}
 				}

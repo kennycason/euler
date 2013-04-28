@@ -5,15 +5,18 @@ import java.util.List;
 import java.util.Set;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
-public class _047 {
+public class _047 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _047();
+		AbstractProblem p = new _047();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _047() {
+	public void run() {
 		int consecutiveGoal = 4;
 		int distinctPrimeFactorGoal = 4;
 		
@@ -26,7 +29,7 @@ public class _047 {
 				consecutive = 0;
 			}
 			if(consecutive == consecutiveGoal) {
-				System.out.println(i - consecutiveGoal + 1);
+				this.answer = i - consecutiveGoal + 1;
 				// System.out.println(factors);
 				break;
 			}

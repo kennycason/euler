@@ -1,17 +1,20 @@
 package _073;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
 
 
-public class _073 {
+public class _073 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _073();
+		AbstractProblem p = new _073();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _073() {
+	public void run() {
 		int a = 3; // 1/3
 		int b = 2; // 1/2
 		int count = 0;
@@ -23,7 +26,7 @@ public class _073 {
 		        }
 		    }
 		}
-		System.out.println(count);
+		this.answer = count;
 	}
 	
 }

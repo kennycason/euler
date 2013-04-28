@@ -3,15 +3,18 @@ package _037;
 import java.util.List;
 
 import lib.Numbers;
+import main.AbstractProblem;
 
 
-public class _037 {
+public class _037 extends AbstractProblem {
 
 	public static void main(String[] args) {
-		new _037();
+		AbstractProblem p = new _037();
+		p.run();
+		System.out.println(p.answer());
 	}
 
-	public _037() {
+	public void run() {
 
 		List<Long> primes = Numbers.primes(739397);
 		int sum = 0;
@@ -23,8 +26,7 @@ public class _037 {
 				sum += prime;
 			}
 		}
-		
-		System.out.println(sum);
+		this.answer = sum;
 	}
 
 	private boolean truncatableRtoL(Long prime) {
