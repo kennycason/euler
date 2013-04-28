@@ -170,6 +170,14 @@ public class Numbers {
 	public static boolean isPalindrome(long n) {
 		return n == reverse(n);
 	}
+	
+	public static boolean isPalindrome(BigInteger n) {
+		return n.toString().equals(new StringBuilder(n.toString()).reverse().toString());
+	}
+	
+	public static BigInteger reverse(BigInteger n) {
+		return new BigInteger(new StringBuilder(n.toString()).reverse().toString());
+	}
 
 	public static boolean isPrime(long n) {
 		// prime numbers are natural by definition
