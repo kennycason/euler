@@ -19,7 +19,7 @@ public class _047 {
 		
 		int consecutive = 0;
 		for(int i = 2; ; i++) {
-			List<Long> factors =  Numbers.primeFactors(i); 
+			List<Long> factors =  Numbers.factors(i); 
 			if(onlyNDistinctPrimeFactors(factors, distinctPrimeFactorGoal)) {
 				consecutive++;
 			} else {

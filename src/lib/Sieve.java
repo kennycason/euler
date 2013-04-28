@@ -8,7 +8,7 @@ public class Sieve {
 	private Sieve() {
 	}
 	
-	public static List<Long> eratosthenes(long to) {
+	public static List<Long> eratosthenes(int to) {
 		List<Long> primes = new LinkedList<Long>();
 		
 		long[] numbers = Numbers.enumerate(2, to);
@@ -25,6 +25,5 @@ public class Sieve {
 		}
 		return primes;
 	}
-
 	
 }

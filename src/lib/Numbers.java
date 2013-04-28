@@ -3,12 +3,13 @@ package lib;
 import java.math.BigInteger;
 import java.util.BitSet;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Numbers {
-	
+
 	private Numbers() {
 	}
 
@@ -35,7 +36,7 @@ public class Numbers {
 	public static long gcd(long a, long b) {
 		return b == 0 ? a : gcd(b, a % b);
 	}
-	
+
 	public static String asFraction(long a, long b) {
 		long gcd = gcd(a, b);
 		return (a / gcd) + "/" + (b / gcd);
@@ -71,7 +72,7 @@ public class Numbers {
 		return f;
 	}
 
-	public static List<Long> primeFactors(long n) {
+	public static List<Long> factors(long n) {
 		LinkedList<Long> factors = new LinkedList<Long>();
 		for (long i = 2; i < n / i; i++) {
 			while (n % i == 0) {
@@ -85,31 +86,33 @@ public class Numbers {
 		return factors;
 	}
 	
+	public static List<Long> primeFactors(long n) {
+		List<Long> factors = new LinkedList<Long>();
+		for (long i = 2; i <= n / i; i++) {
+			while (n % i == 0) {
+				factors.add(i);
+				n /= i;
+			}
+		}
+		if (n > 1) {
+			factors.add(n);
+		}
+		return factors;
+	}
+
+	public static List<Long> distinctPrimeFactors(long n) {
+		return new LinkedList<Long>(new HashSet<Long>(primeFactors(n)));
+	}
+
 	public static long[] enumerate(long start, long end) {
 		long[] arr = new long[(int) (end - start + 1)];
 		int i = 0;
-		for(long n = start; i < arr.length; n++,i++) {
+		for (long n = start; i < arr.length; n++, i++) {
 			arr[i] = n;
 		}
 		return arr;
 	}
-
-	public static List<Long> factors(long n) {
-		LinkedList<Long> factors = new LinkedList<Long>();
-		if (n == 1) {
-			factors.add(1l);
-			return factors;
-		}
-		long half = n / 2;
-		for (long i = 1; i <= half; i++) {
-			if (n % i == 0) {
-				factors.add(i);
-			}
-		}
-		factors.add(n);
-		return factors;
-	}
-
+	
 	public static List<Long> factorsExclude1AndN(long n) {
 		LinkedList<Long> factors = new LinkedList<Long>();
 		long half = n / 2;
@@ -183,7 +186,7 @@ public class Numbers {
 		}
 		return true;
 	}
-	
+
 	public static boolean isComposite(long n) {
 		// prime numbers are natural by definition
 		if (n <= 1) {
@@ -200,7 +203,7 @@ public class Numbers {
 		return false;
 	}
 
-	public static List<Long> primes(int to) {
+	public static List<Long> primes(long to) {
 		List<Long> primes = new LinkedList<Long>();
 		for (long i = 2; i <= to; i++) {
 			if (isPrime(i)) {
@@ -208,6 +211,38 @@ public class Numbers {
 			}
 		}
 		return primes;
+	}
+
+	public static long numCoprimes(int n) {
+		long count = 0;
+		long[] numbers = Numbers.enumerate(1, n);
+		for (int i = 0; i < numbers.length - 1; i++) {
+			if (Numbers.gcd(numbers[i], n) == 1) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	public static long totient(int n) {
+		double phin = 1;
+		List<Long> primeFactors = distinctPrimeFactors(n);
+		for (Long p : primeFactors) {
+			phin *= (1.0 - 1.0 / p);
+		}
+		return (long) Math.round(phin * n);
+	}
+
+	public static List<Long> coprimes(int to) {
+		List<Long> coprimes = new LinkedList<Long>();
+
+		long[] numbers = Numbers.enumerate(1, to);
+		for (int i = 0; i < numbers.length - 1; i++) {
+			if (Numbers.gcd(numbers[i], to) == 1) {
+				coprimes.add(numbers[i]);
+			}
+		}
+		return coprimes;
 	}
 
 	public static boolean isPythagoreanTriplet(int a, int b, int c) {
