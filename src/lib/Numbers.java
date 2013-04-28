@@ -224,6 +224,9 @@ public class Numbers {
 		return count;
 	}
 
+	/*
+	 * DynamicAlgorithms.totient(int n) is faster
+	 */
 	public static long totient(int n) {
 		double phin = 1;
 		List<Long> primeFactors = distinctPrimeFactors(n);
@@ -232,7 +235,7 @@ public class Numbers {
 		}
 		return (long) Math.round(phin * n);
 	}
-
+	
 	public static List<Long> coprimes(int to) {
 		List<Long> coprimes = new LinkedList<Long>();
 
