@@ -65,25 +65,25 @@ import _071._071;
 import _072._072;
 import _073._073;
 import _074._074;
+import _187._187;
 
 public class Runner {
 
 	public static void main(String[] args) {
 		Runner r = new Runner();
-		r.run();
+		r.run(10);
 	}
 	
-	public void run() {
+	public void run(int i) {
 		
 		Clock clock = Clock.getInstance();
 		Map<Integer, Class<?>> problems = Runner.getProblems();
 		List<Integer> keys = new LinkedList<Integer>(problems.keySet());
 		Collections.sort(keys);
 		
-		for(Integer key : keys) {
 			try {
-				Class<?> p = problems.get(key);
-			    System.out.println("Problem #" + key);
+				Class<?> p = problems.get(i);
+			    System.out.println("Problem #" + i);
 			    clock.start();
 			    System.out.print("Answer: ");
 			    p.newInstance();
@@ -93,7 +93,7 @@ public class Runner {
 			} catch (Exception e) {
 				// Pokemon, gotta catch'em all!
 			} 
-		}
+
 	}
 	
 	public static Map<Integer, Class<?>> getProblems() {
@@ -156,6 +156,7 @@ public class Runner {
 		p.put(72, _072.class);
 		p.put(73, _073.class);
 		p.put(74, _074.class);
+		p.put(187, _187.class);
 		return p;
 	}
 
