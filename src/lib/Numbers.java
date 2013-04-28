@@ -84,6 +84,15 @@ public class Numbers {
 		}
 		return factors;
 	}
+	
+	public static long[] enumerate(long start, long end) {
+		long[] arr = new long[(int) (end - start + 1)];
+		int i = 0;
+		for(long n = start; i < arr.length; n++,i++) {
+			arr[i] = n;
+		}
+		return arr;
+	}
 
 	public static List<Long> factors(long n) {
 		LinkedList<Long> factors = new LinkedList<Long>();
@@ -218,11 +227,6 @@ public class Numbers {
 			set.set(mod);
 			i /= 10;
 		}
-		for (int d = 1; d < 10; d++) {
-			if (!set.get(d)) {
-				return false;
-			}
-		}
 		return true;
 	}
 
@@ -231,6 +235,9 @@ public class Numbers {
 			return false;
 		}
 		BitSet set = new BitSet();
+		if (i <= 123456789) { // count for leading zero
+			set.set(0);
+		}
 		while (i > 0) {
 			int mod = (int) (i % 10);
 			if (set.get(mod)) {
@@ -238,14 +245,6 @@ public class Numbers {
 			}
 			set.set(mod);
 			i /= 10;
-		}
-		if (i < 1e7) { // count for leading zero
-			set.set(0);
-		}
-		for (int d = 0; d < 10; d++) {
-			if (!set.get(d)) {
-				return false;
-			}
 		}
 		return true;
 	}
