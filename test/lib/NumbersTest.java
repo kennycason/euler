@@ -24,14 +24,12 @@ public class NumbersTest {
 		assertFalse(Numbers.is1To9PanDigit(1234567890));
 		assertFalse(Numbers.is1To9PanDigit(1234566789));
 		
-		
 		assertTrue(Numbers.is0To9PanDigit(1234567890));
 		assertTrue(Numbers.is0To9PanDigit(1234059786));
 		assertTrue(Numbers.is0To9PanDigit(123456789)); // invisible preleading 00
 		assertFalse(Numbers.is0To9PanDigit(12345678));
 		assertFalse(Numbers.is0To9PanDigit(123456789));
 		assertFalse(Numbers.is0To9PanDigit(1234566789));
-		
 	}
 
 }
