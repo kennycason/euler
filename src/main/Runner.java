@@ -2,6 +2,7 @@ package main;
 
 import java.awt.Color;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -68,6 +69,7 @@ import _071._071;
 import _072._072;
 import _073._073;
 import _074._074;
+import _187._187;
 import _214._214;
 
 public class Runner {
@@ -80,6 +82,7 @@ public class Runner {
 	public void run() {
 		
 		Clock clock = Clock.getInstance();
+		clock.start();
 		Map<Integer, AbstractProblem> problems = Runner.getProblems();
 		List<Integer> keys = new LinkedList<Integer>(problems.keySet());
 		Collections.sort(keys);
@@ -93,7 +96,6 @@ public class Runner {
 			    System.out.println("Problem #" + i);
 			    clock.reset();
 			    p.run();
-			    clock.stop();
 			    r.answer = p.answer();
 			    System.out.println("Answer: " + p.answer());
 			    r.time = clock.elapsedMillis() / 1000.0;
@@ -171,6 +173,7 @@ public class Runner {
 		p.put(72, new _072());
 		p.put(73, new _073());
 		p.put(74, new _074());
+		p.put(187, new _187());
 		p.put(214, new _214());
 		return p;
 	}
@@ -180,7 +183,7 @@ public class Runner {
 		sb.append("Project Euler - Java\n"
 				+ "=====\n\n"
 				+ "My attempt at Project Euler problems using Java<br/>\n"
-				+ "<img src=\"http://projecteuler.net/profile/kennycason.png?id=2\"/>\n\n"
+				+ "<img src=\"http://projecteuler.net/profile/kennycason.png?id=" + new Date().getTime() + "\"/>\n\n"
 				+ "Current results (better view at: http://ken-soft.com/project-euler/)<br/>\n");
 		sb.append("<table border=\"1\" cellpadding=\"4\">\n<tr><td></td><td>Answer</td><td>Time</td><td>@Source</td</tr>\n");
 		for (Result r : results) {
