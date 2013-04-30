@@ -71,6 +71,7 @@ import _073._073;
 import _074._074;
 import _187._187;
 import _214._214;
+import _254._254;
 
 public class Runner {
 
@@ -93,14 +94,19 @@ public class Runner {
 				Result r = new Result();
 				r.problem = i;
 				AbstractProblem p = problems.get(i);
-			    System.out.println("Problem #" + i);
-			    clock.reset();
-			    p.run();
-			    r.answer = p.answer();
-			    System.out.println("Answer: " + p.answer());
-			    r.time = clock.elapsedMillis() / 1000.0;
-				System.out.println("Time: " + r.time + "s");
-				System.out.println();
+				if(p.solved()) {
+				    System.out.println("Problem #" + i);
+				    clock.reset();
+				    p.run();
+				    r.answer = p.answer();
+				    System.out.println("Answer: " + p.answer());
+				    r.time = clock.elapsedMillis() / 1000.0;
+					System.out.println("Time: " + r.time + "s");
+					System.out.println();
+				} else {
+					r.answer = "Working";
+					r.time = -1;
+				}
 				results.add(r);
 			} catch (Exception e) {
 				// Pokemon, gotta catch'em all!
@@ -175,6 +181,7 @@ public class Runner {
 		p.put(74, new _074());
 		p.put(187, new _187());
 		p.put(214, new _214());
+		p.put(254, new _254());
 		return p;
 	}
 
@@ -216,6 +223,9 @@ public class Runner {
 	}
 
 	private Color scaleRedGreen(double val, double max) {
+		if(val < 0) {
+			return Color.lightGray;
+		}
 		if(val > max) {
 			val = max;
 		}
