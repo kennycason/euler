@@ -19,9 +19,9 @@ public class _254 extends AbstractProblem {
 	//private Map<Long, Long> gMem = new HashMap<Long, Long>();
 	
 	public void run() {
-		this.solved = false;
+		solved(false);
 		// System.out.println(g(20)); // should be 267
-		System.out.println(sumsg(1, 20)); // should be 156
+	//	System.out.println(sumsg(1, 20)); // should be 156
 	}
 	
 	private long sumsg(long start, long end) {

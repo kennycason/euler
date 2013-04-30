@@ -4,7 +4,11 @@ public abstract class AbstractProblem implements Runnable {
 
 	protected Object answer;
 	
-	protected boolean solved = true; // In case I need to flag a mid-solved problem as not solved
+	private boolean solved; // In case I need to flag a mid-solved problem as not solved
+	
+	public AbstractProblem() {
+		solved = true;
+	}
 	
 	public Object answer() {
 		return answer;
@@ -14,6 +18,10 @@ public abstract class AbstractProblem implements Runnable {
 	
 	public boolean solved() {
 		return solved;
+	}
+	
+	public void solved(boolean solved) {
+		this.solved = solved;
 	}
 	
 }

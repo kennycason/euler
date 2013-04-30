@@ -94,6 +94,7 @@ public class Runner {
 				Result r = new Result();
 				r.problem = i;
 				AbstractProblem p = problems.get(i);
+				System.out.println(p.solved());
 				if(p.solved()) {
 				    System.out.println("Problem #" + i);
 				    clock.reset();
