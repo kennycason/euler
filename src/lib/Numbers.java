@@ -36,6 +36,10 @@ public class Numbers {
 	public static long gcd(long a, long b) {
 		return b == 0 ? a : gcd(b, a % b);
 	}
+	
+	public static long gcd(long a, long b, long c) {
+		return gcd(a, gcd(b, c));
+	}
 
 	public static String asFraction(long a, long b) {
 		long gcd = gcd(a, b);
@@ -104,13 +108,17 @@ public class Numbers {
 		return new LinkedList<Long>(new HashSet<Long>(primeFactors(n)));
 	}
 
-	public static long[] enumerate(long start, long end) {
-		long[] arr = new long[(int) (end - start + 1)];
+	public static long[] enumerate(long start, long end, int step) {
+		long[] arr = new long[(int) (end - start + 1) / step];
 		int i = 0;
-		for (long n = start; i < arr.length; n++, i++) {
+		for (long n = start; i < arr.length; n += step, i++) {
 			arr[i] = n;
 		}
 		return arr;
+	}
+	
+	public static long[] enumerate(long start, long end) {
+		return enumerate(start, end, 1);
 	}
 	
 	public static List<Long> factorsExclude1AndN(long n) {

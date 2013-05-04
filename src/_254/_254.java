@@ -12,6 +12,10 @@ public class _254 extends AbstractProblem {
 		p.run();
 		System.out.println(p.answer());
 	}
+	
+	public _254() {
+		solved(false);
+	}
 
 	// memoize
 	//private Map<Long, Long> fMem = new HashMap<Long, Long>();
@@ -19,7 +23,6 @@ public class _254 extends AbstractProblem {
 	//private Map<Long, Long> gMem = new HashMap<Long, Long>();
 	
 	public void run() {
-		solved(false);
 		// System.out.println(g(20)); // should be 267
 	//	System.out.println(sumsg(1, 20)); // should be 156
 	}
