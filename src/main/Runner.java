@@ -72,6 +72,7 @@ import _074._074;
 import _187._187;
 import _214._214;
 import _254._254;
+import _283._283;
 
 public class Runner {
 
@@ -182,7 +183,9 @@ public class Runner {
 		p.put(74, new _074());
 		p.put(187, new _187());
 		p.put(214, new _214());
+		
 		p.put(254, new _254());
+		p.put(254, new _283());
 		return p;
 	}
 

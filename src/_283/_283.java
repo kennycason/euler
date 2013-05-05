@@ -47,9 +47,7 @@ public class _283 extends AbstractProblem {
 	public void run() {
 		//System.out.println(extrapolate(7, 65, 68)); // ratio 1.5, gcd = 1
 		//System.out.println(extrapolate(14, 130, 136)); // ratio = 2, gcd = 2...
-		if(true) {
-			return;
-		}
+
 		long sum = 0;
 		for(int a = 1; a < 200; a++) { // offset b, and c starts to eliminate doubles;
 			for(int b = a; b < 200; b++) {
@@ -82,7 +80,7 @@ public class _283 extends AbstractProblem {
 	 *    c   |h      b    
 	 *        |
      * B--x---P-----(a-x)---C
-     *  \________x___________/
+     *  \________a___________/
      *  
      *  x^2 + h^2 = c^2
      *  h^2 + (a-x)^2 = b^2
@@ -97,7 +95,7 @@ public class _283 extends AbstractProblem {
 	 */
 	private long extrapolate(int a, int b, int c) {
 		double cosC = (c * c - a * a - b * b) / (-2.0 * a * b);
-		// System.out.println("start: " + a + " " + b + " " + c + " cos(C) = " + cosC);
+		System.out.println("start: " + a + " " + b + " " + c + " cos(C) = " + Math.acos(cosC) * 180 / Math.PI);
 		int a0 = a;
 		int b0 = b;
 		long sum = 0;
@@ -115,7 +113,7 @@ public class _283 extends AbstractProblem {
 				return sum;
 			}
 
-			System.out.println("(" + a + ", " + b + ", " + c + "), p = " + p + ", area = " + area + ", ratio = " + (area / p) + ", gcd = " + Numbers.gcd(a,  b, c));
+			// System.out.println("(" + a + ", " + b + ", " + c + "), p = " + p + ", area = " + area + ", ratio = " + (area / p) + ", gcd = " + Numbers.gcd(a,  b, c));
 			a += a0;
 			b += b0;
 			sum += p;
