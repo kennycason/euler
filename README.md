@@ -4,7 +4,8 @@ Project Euler - Java
 My attempt at Project Euler problems using Java<br/>
 System Stats:
 Available processors (cores): 4
-Max Memory: 1854865408<img src="http://projecteuler.net/profile/kennycason.png?id=1367797607309"/>
+Max Memory: 1854865408<br/>
+<img src="http://projecteuler.net/profile/kennycason.png?id=1367797607309"/>
 
 Current results (better view at: http://ken-soft.com/project-euler/)<br/>
 <table border="1" cellpadding="4">
