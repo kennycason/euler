@@ -60,11 +60,15 @@ import _047._047;
 import _048._048;
 import _049._049;
 import _050._050;
+import _052._052;
 import _053._053;
 import _055._055;
+import _056._056;
 import _057._057;
+import _058._058;
 import _063._063;
 import _067._067;
+import _069._069;
 import _071._071;
 import _072._072;
 import _073._073;
@@ -172,11 +176,15 @@ public class Runner {
 		p.put(48, new _048());
 		p.put(49, new _049());
 		p.put(50, new _050());
+		p.put(52, new _052());
 		p.put(53, new _053());
 		p.put(55, new _055());
+		p.put(56, new _056());
 		p.put(57, new _057());
+		p.put(58, new _058());
 		p.put(63, new _063());	
 		p.put(67, new _067());
+		p.put(69, new _069());
 		p.put(71, new _071());
 		p.put(72, new _072());
 		p.put(73, new _073());
@@ -194,6 +202,9 @@ public class Runner {
 		sb.append("Project Euler - Java\n"
 				+ "=====\n\n"
 				+ "My attempt at Project Euler problems using Java<br/>\n"
+				+ "System Stats:\n" 
+				+ "Available processors (cores): " +  Runtime.getRuntime().availableProcessors() + "\n"
+				+ "Max Memory: " + Runtime.getRuntime().maxMemory()
 				+ "<img src=\"http://projecteuler.net/profile/kennycason.png?id=" + new Date().getTime() + "\"/>\n\n"
 				+ "Current results (better view at: http://ken-soft.com/project-euler/)<br/>\n");
 		sb.append("<table border=\"1\" cellpadding=\"4\">\n<tr><td></td><td>Answer</td><td>Time</td><td>@Source</td</tr>\n");

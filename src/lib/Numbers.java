@@ -75,6 +75,21 @@ public class Numbers {
 		}
 		return f;
 	}
+	
+	public static boolean isPowerOfTwo(int n) {
+		boolean isPowerOfTwo = true;
+		int reminder = 0;
+		while (n > 1) {
+			reminder = n % 2;
+			if (reminder != 0) {
+				isPowerOfTwo = false;
+				break;
+			} else {
+				n = n / 2;
+			}
+		}
+		return isPowerOfTwo;
+	}
 
 	public static List<Long> factors(long n) {
 		LinkedList<Long> factors = new LinkedList<Long>();
@@ -142,6 +157,9 @@ public class Numbers {
 	}
 
 	public static BigInteger bigPow(int base, int exp) {
+		if(base == 2) {
+			return bigPow2(exp);
+		}
 		if (exp == 0) {
 			return BigInteger.valueOf(0);
 		}
@@ -151,6 +169,11 @@ public class Numbers {
 			n = n.multiply(b);
 		}
 		return n;
+	}
+	
+	public static BigInteger bigPow2(int exp) {
+		// for really large exp should do something like: http://stackoverflow.com/questions/4102010/calculating-extremely-large-powers-of-2
+		return BigInteger.ONE.shiftLeft(exp);
 	}
 
 	public static long sum(int from, int to) {
