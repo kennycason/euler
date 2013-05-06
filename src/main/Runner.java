@@ -110,11 +110,10 @@ public class Runner {
 				    r.time = clock.elapsedMillis() / 1000.0;
 					System.out.println("Time: " + r.time + "s");
 					System.out.println();
-				} else {
-					r.answer = "Working";
-					r.time = -1;
 				}
-				results.add(r);
+				if(p.solved()) {
+					results.add(r);
+				}
 			} catch (Exception e) {
 				// Pokemon, gotta catch'em all!
 			} 
