@@ -55,6 +55,17 @@ public class Numbers {
 		}
 		return divisors;
 	}
+	
+	public static List<Long> positiveDivisors(long n) {
+		List<Long> divisors = new LinkedList<Long>();
+		for (long i = 1; i <= n / 2; i++) {
+			if (n % i == 0) {
+				divisors.add(i);
+			}
+		}
+		divisors.add(n);
+		return divisors;
+	}
 
 	// poor man's factorial ^_^, should use SplitRecursive or anything but
 	// this...
