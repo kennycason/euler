@@ -100,7 +100,6 @@ public class Runner {
 				Result r = new Result();
 				r.problem = i;
 				AbstractProblem p = problems.get(i);
-				System.out.println(p.solved());
 				if(p.solved()) {
 				    System.out.println("Problem #" + i);
 				    clock.reset();
@@ -203,10 +202,11 @@ public class Runner {
 		sb.append("Project Euler - Java\n"
 				+ "=====\n\n"
 				+ "My attempt at Project Euler problems using Java<br/>\n"
+				+ "Friend Id: 51224783162534_6a549f720ff34f6884df595acdc8e85b<br/>\n"
+				+ "<img src=\"http://projecteuler.net/profile/kennycason.png?id=" + new Date().getTime() + "\"/><br/>\n"
 				+ "System Stats:\n" 
 				+ "Available processors (cores): " +  Runtime.getRuntime().availableProcessors() + "\n"
-				+ "Max Memory: " + Runtime.getRuntime().maxMemory()
-				+ "<img src=\"http://projecteuler.net/profile/kennycason.png?id=" + new Date().getTime() + "\"/>\n\n"
+				+ "Max Memory: " + Runtime.getRuntime().maxMemory() + "<br/>\n"
 				+ "Current results (better view at: http://ken-soft.com/project-euler/)<br/>\n");
 		sb.append("<table border=\"1\" cellpadding=\"4\">\n<tr><td></td><td>Answer</td><td>Time</td><td>@Source</td</tr>\n");
 		for (Result r : results) {
