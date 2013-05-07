@@ -15,14 +15,14 @@ public class _179 extends AbstractProblem {
 	
 	public _179() {
 		solved(false);
-		printTable(500); // cool little pattern i found :)
+		// printTable(500); // cool little pattern i found :)
 	}
 	
 	public void run() {
 		int count = 0;
 		int nDiv = Numbers.properDivisors(2).size();
 		int n2Div;
-		for(int n = 3; n < 20 - 1; n++) {
+		for(int n = 3; n < 10000000 - 1; n++) {
 			n2Div = Numbers.properDivisors(n).size();
 			if(nDiv == n2Div) {
 				count++;
