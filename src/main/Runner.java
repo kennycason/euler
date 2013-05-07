@@ -74,6 +74,7 @@ import _071._071;
 import _072._072;
 import _073._073;
 import _074._074;
+import _076._076;
 import _097._097;
 import _102._102;
 import _112._112;
@@ -195,6 +196,7 @@ public class Runner {
 		p.put(72, new _072());
 		p.put(73, new _073());
 		p.put(74, new _074());
+		p.put(76, new _076());
 		p.put(97, new _097());
 		p.put(102, new _102());
 		p.put(112, new _112());
