@@ -37,8 +37,7 @@ public class _031 extends AbstractProblem {
 		return combMat[combMat.length - 1];
 	}
 
-	@SuppressWarnings("unused")
-	private int bruteForce() {
+	public int bruteForce() {
 		int combinations = 0;
 		for (int a = max; a >= 0; a -= 200) {
 			for (int b = a; b >= 0; b -= 100) {

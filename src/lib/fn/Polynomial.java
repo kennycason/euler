@@ -35,5 +35,9 @@ public class Polynomial {
 		}
 		return sb.toString().trim();
 	}
+
+	public List<Term> terms() {
+		return terms;
+	}
 	
 }
