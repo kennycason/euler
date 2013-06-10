@@ -204,9 +204,22 @@ public class Numbers {
 		}
 		return reverse;
 	}
+	
+	public static int numDigits(long n) {
+		return (int) Math.log10(n) + 1;
+	}
 
 	public static int getNthDigit(long number, int n) {
 		return (int) ((number / Math.pow(10, n - 1)) % 10);
+	}
+	
+	public static long concat(long n, long n2) {
+        long c = n2;
+        while (c > 0) {
+            n *= 10;
+            c /= 10;
+        }
+        return n + n2;
 	}
 
 	public static boolean isPalindrome(long n) {

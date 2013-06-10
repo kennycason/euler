@@ -10,6 +10,8 @@ import main.AbstractProblem;
 
 public class _060 extends AbstractProblem {
 
+	private Set<Long> memoized = new HashSet<Long>();
+	
 	public static void main(String[] args) {
 		AbstractProblem p = new _060();
 		p.run();
@@ -21,60 +23,70 @@ public class _060 extends AbstractProblem {
 	}
 	
 	private long smallestSum() {
+	
 		Set<Long> primeSet = new HashSet<Long>();
-		List<Long> primesList = Sieve.eratosthenes(100000);
-		Long[] primeArray = primesList.toArray(new Long[primesList.size()]);
-		for(Long p : primesList) {
-			primeSet.add(p);
-		}
-		
-		long smallestSum = Integer.MAX_VALUE;
-		for(;;) {
-			for(int p1 = 0; p1 < primeArray.length; p1++) {
-				for(int p2 = p1 + 1; p2 < primeArray.length; p2++) {
-					for(int p3 = p2 + 1; p3 < primeArray.length; p3++) {
-						for(int p4 = p3 + 1; p4 < primeArray.length; p4++) {
-					//		System.out.println(primeArray[p1] + " " +  primeArray[p2] 
-					//				+ " " +  primeArray[p3] + " " +  primeArray[p4]);
-							if(primeSet.contains(concat(p1, p2))
-								&& primeSet.contains(concat(p2, p1))
-								&& primeSet.contains(concat(p1, p3))
-								&& primeSet.contains(concat(p3, p1))
-								&& primeSet.contains(concat(p1, p4))
-								&& primeSet.contains(concat(p4, p1))
-										
-								&& primeSet.contains(concat(p2, p3))
-								&& primeSet.contains(concat(p3, p2))
-								&& primeSet.contains(concat(p2, p4))
-								&& primeSet.contains(concat(p4, p2))
+		List<Long> primePairList = Sieve.eratosthenes(30000);
+		Long[] primes = primePairList.toArray(new Long[primePairList.size()]);
+		primeSet.addAll(primePairList);
+
+		long smallestSum = Long.MAX_VALUE;
+		for(int p1 = 1; p1 < primes.length; p1++) {
+			for(int p2 = p1 + 1; p2 < primes.length; p2++) {
+				for(int p3 = p2 + 1; p3 < primes.length; p3++) {
+					for(int p4 = p3 + 1; p4 < primes.length; p4++) {
+						for(int p5 = p4 + 1; p5 < primes.length; p5++) {
+							// p1 = 5; p2 = 691; p3 = 750; p4 = 867; p5 = 1050;
+						    // System.out.println(primes[p1] + " " + primes[p2] + " " + primes[p3] + " " + primes[p4] + " " + primes[p5]);
+							if(memoizedIsPrime(Numbers.concat(primes[p1], primes[p2]))
+								&& memoizedIsPrime(Numbers.concat(primes[p1], primes[p3]))
+								&& memoizedIsPrime(Numbers.concat(primes[p1], primes[p4]))
+								&& memoizedIsPrime(Numbers.concat(primes[p1], primes[p5]))
 								
-								&& primeSet.contains(concat(p3, p4))
-								&& primeSet.contains(concat(p4, p3))
+								&& memoizedIsPrime(Numbers.concat(primes[p2], primes[p1]))							
+								&& memoizedIsPrime(Numbers.concat(primes[p2], primes[p3]))
+								&& memoizedIsPrime(Numbers.concat(primes[p2], primes[p4]))
+								&& memoizedIsPrime(Numbers.concat(primes[p2], primes[p5]))
+								
+								&& memoizedIsPrime(Numbers.concat(primes[p3], primes[p1]))
+								&& memoizedIsPrime(Numbers.concat(primes[p3], primes[p2]))
+								&& memoizedIsPrime(Numbers.concat(primes[p3], primes[p4]))
+								&& memoizedIsPrime(Numbers.concat(primes[p3], primes[p5]))
+								
+								&& memoizedIsPrime(Numbers.concat(primes[p4], primes[p1]))
+								&& memoizedIsPrime(Numbers.concat(primes[p4], primes[p2]))
+								&& memoizedIsPrime(Numbers.concat(primes[p4], primes[p3]))
+								&& memoizedIsPrime(Numbers.concat(primes[p4], primes[p5]))
+								
+								&& memoizedIsPrime(Numbers.concat(primes[p5], primes[p1]))
+								&& memoizedIsPrime(Numbers.concat(primes[p5], primes[p2]))
+								&& memoizedIsPrime(Numbers.concat(primes[p5], primes[p3]))
+								&& memoizedIsPrime(Numbers.concat(primes[p5], primes[p4]))			
 									) {
-								long sum = primeArray[p1] + primeArray[p2] 
-										+ primeArray[p3] + primeArray[p4];
+							    // System.out.println("ALL PRIME!" + primes[p1] + " " + primes[p2] + " " + primes[p3] + " " + primes[p4] + " " + primes[p5]);// + " " + primes[p5]);
+								long sum = primes[p1] + primes[p2] + primes[p3] + primes[p4] + primes[p5];
 								if(sum < smallestSum) {
 									smallestSum = sum;
-									System.out.println(sum + ": " + primeArray[p1] + " " +  primeArray[p2] 
-											+" " +  primeArray[p3] + " " +  primeArray[p4]);
+									System.out.println("Smallest Sum: " + sum);
 								}
 							}
 						}
 					}
 				}
 			}
-			return smallestSum;
 		}
+		return smallestSum;
 	}
 	
-	private long concat(long n, long n2) {
-		n2 = Numbers.reverse(n2);
-		while(n2 > 0) {
-			n *= 10;
-			n += n2 % 10;
-			n2 /= 10;
+	public boolean memoizedIsPrime(long n) {
+		if(memoized.contains(n)) {
+			return true;
 		}
-		return n;
+		if(Numbers.isPrime(n)) {
+			memoized.add(n);
+			return true;
+		}
+		return false;
 	}
+	
 	
 }
