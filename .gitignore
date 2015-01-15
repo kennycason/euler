@@ -1,7 +1,16 @@
 *.class
+*.DS_store
 .classpath
 .project
-.settings 
-bin
-target
-# Package Files #
+.metadata
+.settings
+.settings/*
+.idea
+/main/target/*
+/target/*
+/bin/*
+*.log
+*.log.gz
+.idea/*
+*.iml
+*.patch
