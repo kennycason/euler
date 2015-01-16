@@ -3,10 +3,8 @@ package problems._079;
 import lib.Numbers;
 import main.Problem;
 import main.annotations.Solved;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.ArrayUtils;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +23,7 @@ public class _079 extends Problem {
 //        System.out.println(matchesAll(1234, allDigits1));
 //        System.out.println(matchesAll(124, allDigits1));
 
-        final List<int[]> allDigits = loadDigits();
+        final List<int[]> allDigits = loadKeyDigits();
         int n = 101;
         for(;;) {
             if(matchesAll(n, allDigits)) {
@@ -65,18 +63,64 @@ public class _079 extends Problem {
         return true;
     }
 
-    private List<int[]> loadDigits() {
+    private List<int[]> loadKeyDigits() {
+        final int[] allKeys = new int[] {
+                319,
+                680,
+                180,
+                690,
+                129,
+                620,
+                762,
+                689,
+                762,
+                318,
+                368,
+                710,
+                720,
+                710,
+                629,
+                168,
+                160,
+                689,
+                716,
+                731,
+                736,
+                729,
+                316,
+                729,
+                729,
+                710,
+                769,
+                290,
+                719,
+                680,
+                318,
+                389,
+                162,
+                289,
+                162,
+                718,
+                729,
+                319,
+                790,
+                680,
+                890,
+                362,
+                319,
+                760,
+                316,
+                729,
+                380,
+                319,
+                728,
+                716
+        };
         List<int[]> allDigits = new ArrayList<>();
-        try {
-            final List<String> lines = IOUtils.readLines(Thread.currentThread().getContextClassLoader().getResourceAsStream("problems/_079/keylog.txt"));
-            for(String line : lines) {
-                final long n = Integer.parseInt(line);  // no zeros in file, so this is safe
-                final int[] digits = Numbers.getDigits(n);
-                ArrayUtils.reverse(digits);
-                allDigits.add(digits);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        for(int pin : allKeys) {
+            final int[] digits = Numbers.getDigits(pin);
+            ArrayUtils.reverse(digits);
+            allDigits.add(digits);
         }
         return allDigits;
     }
