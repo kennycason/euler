@@ -372,4 +372,12 @@ public class Numbers {
 		return Integer.parseInt(sb.toString());
 	}
 
+    public String join(int[] digits) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int d : digits) {
+            stringBuilder.append(d);
+        }
+        return stringBuilder.toString();
+    }
+
 }
