@@ -86,7 +86,7 @@ public class Runner {
 		sb.append("<table border=\"1\" cellpadding=\"4\">\n<tr><td></td><td>Answer</td><td>Time</td><td>@Source</td</tr>\n");
 		for (Result r : results) {
 			
-			String url = "https://github.com/kennycason/euler/blob/master/src/_" + pad(r.problem) + "/_" + pad(r.problem) + ".java";
+			String url = "https://github.com/kennycason/euler/blob/master/src/main/java/problems/_" + pad(r.problem) + "/_" + pad(r.problem) + ".java";
 			
 			sb.append("<tr><td><b>");
 			sb.append("#" + r.problem);
