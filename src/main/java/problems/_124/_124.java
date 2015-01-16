@@ -36,11 +36,8 @@ public class _124 extends Problem {
 	}
 	
 	private class Container implements Comparable<Container> {
-		
 		int n;
-		
 		int rad;
-		
 		public Container(int n, int rad) {
 			this.n = n;
 			this.rad = rad;
@@ -49,26 +46,11 @@ public class _124 extends Problem {
 		@Override
 		public int compareTo(Container c) {
 			if(rad != c.rad) {
-				if(rad < c.rad) {
-					return -1;
-				} else if(rad > c.rad) {
-					return 1;
-				}
-				return 0;
+                return Integer.compare(rad, c.rad);
 			} else {
-				if(n < c.n) {
-					return -1;
-				} else if(n > c.n) {
-					return 1;
-				}
-				return 0;	
+                return Integer.compare(n, c.n);
 			}
 		}
-		
-		public String toString() {
-			return n + " " + rad;
-		}
-		
 	}
 
 }
