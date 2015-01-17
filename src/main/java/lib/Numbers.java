@@ -27,6 +27,14 @@ public class Numbers {
         return sum;
     }
 
+    public static long sumDigits(String n) {
+        long sum = 0;
+        for (int i = 0; i < n.length(); i++) {
+            sum += Character.getNumericValue(n.charAt(i));
+        }
+        return sum;
+    }
+
 	public static boolean isDeficient(long n) {
 		return sum(properDivisors(n)) < n;
 	}
