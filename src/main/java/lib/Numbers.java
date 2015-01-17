@@ -372,6 +372,14 @@ public class Numbers {
 		return Integer.parseInt(sb.toString());
 	}
 
+    public static int intPower(int b, int e) {
+        int power = b;
+        for(int i = 0; i < e - 1; i++) {
+            power *= b;
+        }
+        return power;
+    }
+
     public String join(int[] digits) {
         StringBuilder stringBuilder = new StringBuilder();
         for(int d : digits) {
