@@ -10,6 +10,7 @@ import java.math.BigInteger;
 public class _297 extends Problem {
 
     private static BigInteger[] fibonacci = Sequence.fibonacci(100000);
+    private static long[] fibonacciL = Sequence.fibonacciAsLong(100000);
 
 	public static void main(String[] args) {
 		Problem p = new _297();
@@ -41,7 +42,35 @@ public class _297 extends Problem {
     For any given positive integer, a representation that satisfies the conditions of Zeckendorf's theorem can be found by using a greedy algorithm, choosing the largest possible Fibonacci number at each stage.
      */
 	public void run() {
-        bruteForce();
+        bruteForce2();
+    }
+    public void bruteForce2() {
+        Clock clock = Clock.getInstance();
+        clock.start();
+        long numbers = 0;
+        int startIndex = 0;
+        long max = 100_000_000_000L; //100_000_000_000_000_000L;
+        for(long i = 1; i < max; i++) {
+            while(fibonacciL[startIndex] <= i) {
+                startIndex++;
+            }
+
+            long currentSum = 0;
+            int subNumbers = 0;
+            for(int j = startIndex; j >= 0; j--) {
+                final long addedValue = currentSum + fibonacciL[j];
+                if(addedValue <= i) {
+                    currentSum = addedValue;
+                    subNumbers++;
+                }
+                if(currentSum == i) {
+                    numbers += subNumbers;
+                    break;
+                }
+            }
+        }
+        this.answer = numbers;
+        System.out.println("e: " + clock.elapsedMillis() + "ms");
     }
 
     // print out sequences
@@ -50,7 +79,7 @@ public class _297 extends Problem {
         clock.start();
         long numbers = 0;
         int startIndex = 0;
-        long max = 1000; //1000000; //100_000_000_000_000_000L;
+        long max = 1000000; //100_000_000_000_000_000L;
         for(long i = 1; i < max; i++) {
             System.out.print(i + ":\t");
             while(fibonacci[startIndex].compareTo(BigInteger.valueOf(i)) <= 0) {
