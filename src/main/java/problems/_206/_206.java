@@ -1,9 +1,10 @@
-package working._206;
+package problems._206;
 
 import lib.Numbers;
 import main.Problem;
+import main.annotations.Solved;
 
-
+@Solved
 public class _206 extends Problem {
 
 	public static void main(String[] args) {
