@@ -1,7 +1,8 @@
 package lib;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -11,29 +12,50 @@ public class Sequence {
 
 	}
 
-	public static List<Integer> fibonacci(int terms) {
-		LinkedList<Integer> seq = new LinkedList<Integer>();
+	public static long[] fibonacciAsLong(int terms) {
+		final long[] sequence = new long[terms];
 		if (terms == 0) {
-			return seq;
+			return sequence;
 		}
-		seq.add(1);
+        sequence[0] = 1;
 		if (terms == 1) {
-			return seq;
+			return sequence;
 		}
-		seq.add(2);
+		sequence[1] = 2;
 
-		int n1 = 1;
-		int n2 = 2;
+		long n1 = 1;
+        long n2 = 2;
 		for (int i = 0; i < terms - 2; i++) {
-			seq.add(n1 + n2);
+			sequence[i + 2] = n1 + n2;
 			n1 = n2;
-			n2 = seq.getLast();
+			n2 = sequence[i + 2];
 		}
-		return seq;
+		return sequence;
 	}
 
-	public static List<Long> fibonacciMaxTerm(long max) {
-		LinkedList<Long> seq = new LinkedList<Long>();
+    public static BigInteger[] fibonacci(int terms) {
+        final BigInteger[] sequence = new BigInteger[terms];
+        if (terms == 0) {
+            return sequence;
+        }
+        sequence[0] = BigInteger.ONE;
+        if (terms == 1) {
+            return sequence;
+        }
+        sequence[1] = BigInteger.valueOf(2);
+
+        BigInteger n1 = BigInteger.ONE;
+        BigInteger n2 = BigInteger.valueOf(2);
+        for (int i = 0; i < terms - 2; i++) {
+            sequence[i + 2] = n1.add(n2);
+            n1 = n2;
+            n2 = sequence[i + 2];
+        }
+        return sequence;
+    }
+
+	public static List<Long> fibonacciToMaxTerm(long max) {
+		final List<Long> seq = new ArrayList<>();
 		if (max <= 0) {
 			return seq;
 		}
@@ -53,13 +75,13 @@ public class Sequence {
 			}
 			seq.add(val);
 			n1 = n2;
-			n2 = seq.getLast();
+			n2 = seq.get(seq.size() - 1);
 		}
 		return seq;
 	}
 
 	public static List<Long> collatz(long n) {
-		LinkedList<Long> seq = new LinkedList<Long>();
+		final List<Long> seq = new ArrayList<>();
 		seq.add(n);
 		while (n > 1) {
 			if (n % 2 == 0) {

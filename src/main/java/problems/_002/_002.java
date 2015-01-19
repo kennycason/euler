@@ -18,7 +18,7 @@ public class _002 extends Problem {
 	public void run() {
 		int max = 4000000;
 		
-		List<Long> seq = Sequence.fibonacciMaxTerm(max);
+		List<Long> seq = Sequence.fibonacciToMaxTerm(max);
 		int sum = 0;
 		for(Long i : seq) {
 			if(i % 2 == 0) {
