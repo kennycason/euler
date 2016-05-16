@@ -9,13 +9,13 @@ import java.math.BigInteger;
 @Solved
 public class _104 extends Problem {
 
-	public static void main(String[] args) {
-		Problem p = new _104();
-		p.run();
-		System.out.println(p.answer());
-	}
+    public static void main(String[] args) {
+        Problem p = new _104();
+        p.run();
+        System.out.println(p.answer());
+    }
 
-	public void run() {
+    public void run() {
         final BigInteger last9DigitsMask = BigInteger.valueOf(1000000000);
         BigInteger i = BigInteger.ZERO;
         BigInteger j = BigInteger.ONE;
@@ -40,6 +40,6 @@ public class _104 extends Problem {
 
         }
 
-	}
+    }
 
 }

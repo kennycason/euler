@@ -10,22 +10,22 @@ import java.util.Set;
 @Solved
 public class _092 extends Problem {
 
-	public static void main(String[] args) {
-		Problem p = new _092();
-		p.run();
-		System.out.println(p.answer());
-	}
+    public static void main(String[] args) {
+        Problem p = new _092();
+        p.run();
+        System.out.println(p.answer());
+    }
 
     private final Set<Integer> endsAt1 = new HashSet<>();
     private final Set<Integer> endsAt89 = new HashSet<>();
     private int numEnd89Cycles = 0;
 
-	public void run() {
+    public void run() {
         for(int i = 1; i < 10_000_000; i++) {
             cycle(i);
         }
         this.answer = numEnd89Cycles;
-	}
+    }
 
     private void cycle(int start) {
         //System.out.print(start);

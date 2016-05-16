@@ -8,17 +8,17 @@ import java.math.BigInteger;
 @Solved
 public class _120 extends Problem {
 
-	public static void main(String[] args) {
-		Problem p = new _120();
-		p.run();
-		System.out.println(p.answer());
-	}
+    public static void main(String[] args) {
+        Problem p = new _120();
+        p.run();
+        System.out.println(p.answer());
+    }
 
-	/**
+    /**
      Let r be the remainder when (a−1)^n + (a+1)^n is divided by a^2.
      For example, if a = 7 and n = 3, then r = 42: 6^3 + 8^3 = 728 ≡ 42 mod 49. And as n varies, so too will r, but for a = 7 it turns out that rmax = 42.
      For 3 ≤ a ≤ 1000, find ∑ r max.
-	 */
+     */
     public void run() {
         long rMaxes = 0;
         for(int r = 3; r <= 1000; r++) {
@@ -38,7 +38,7 @@ public class _120 extends Problem {
             rMaxes += rMax2(r);
         }
         this.answer = rMaxes;
-	}
+    }
 
     // compute power inline
     public long rMax2(int a) {

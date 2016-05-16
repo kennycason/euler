@@ -7,13 +7,13 @@ import main.annotations.Solved;
 @Solved
 public class _206 extends Problem {
 
-	public static void main(String[] args) {
-		Problem p = new _206();
-		p.run();
-		System.out.println(p.answer());
-	}
+    public static void main(String[] args) {
+        Problem p = new _206();
+        p.run();
+        System.out.println(p.answer());
+    }
 
-	/**
+    /**
      Find the unique positive integer whose square has the form 1_2_3_4_5_6_7_8_9_0,
      where each “_” is a single digit.
 
@@ -22,12 +22,12 @@ public class _206 extends Problem {
      therefore both end digits MUST be 0, we can factor of 100 and multiply by 10 at the end.
 
      max number to iterate on is sqrt(1929394959697989990), post optimization sqrt(19293949596979899)
-	 */
-	public _206() {
-		solved(false);
-	}
+     */
+    public _206() {
+        solved(false);
+    }
 
-	public void run() {
+    public void run() {
         final int maxN = (int)Math.sqrt(19293949596979899L); // root with zeros 1389026623, withotu 138902662
         final int minN = (int)Math.sqrt(10203040506070809L); // 1010101010
         //System.out.println("[" + maxN + ".. " + minN + "]");
@@ -37,7 +37,7 @@ public class _206 extends Problem {
                 return;
             }
         }
-	}
+    }
 
     private boolean isConcealedSquare(long n) {
         int[] digits = Numbers.getDigits(n * n);

@@ -6,14 +6,14 @@ import main.annotations.Solved;
 @Solved
 public class _085 extends Problem {
 
-	public static void main(String[] args) {
-		Problem p = new _085();
-		p.run();
-		System.out.println(p.answer());
-	}
-	
-	public void run() {
-		int area = 0;
+    public static void main(String[] args) {
+        Problem p = new _085();
+        p.run();
+        System.out.println(p.answer());
+    }
+
+    public void run() {
+        int area = 0;
         int closedTo2Million = Integer.MAX_VALUE;
         for(int w = 1; w < 100; w++) {
             for(int h = 1; h < 100; h++) {
@@ -27,7 +27,7 @@ public class _085 extends Problem {
             }
         }
         this.answer = area;
-	}
+    }
 
     private int countRectangles(int w, int h) {
         int count = 0;

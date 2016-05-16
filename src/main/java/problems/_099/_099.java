@@ -6,16 +6,16 @@ import main.annotations.Solved;
 @Solved
 public class _099 extends Problem {
 
-	public static void main(String[] args) {
-		Problem p = new _099();
-		p.run();
-		System.out.println(p.answer());
-	}
+    public static void main(String[] args) {
+        Problem p = new _099();
+        p.run();
+        System.out.println(p.answer());
+    }
 
-	/**
+    /**
      * log(a^b) = b*log(a)
-	 */
-	public void run() {
+     */
+    public void run() {
         int maxLine = 1;
         double max = 0;
         for(int i = 0, line = 1; i < BASE_EXPONENT_PAIRS.length; i += 2, line++) {
@@ -27,8 +27,8 @@ public class _099 extends Problem {
             }
         }
 
-		this.answer = maxLine;
-	}
+        this.answer = maxLine;
+    }
 
     private static final int[] BASE_EXPONENT_PAIRS = new int[] {
             519432,525806,

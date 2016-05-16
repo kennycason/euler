@@ -1,10 +1,10 @@
 package lib;
 public class Fraction extends Number implements Comparable<Fraction> {
 
-	private static final long serialVersionUID = -5645381440182845020L;
+    private static final long serialVersionUID = -5645381440182845020L;
 
-	private int numerator;
-	
+    private int numerator;
+
     private int denominator;
 
     public Fraction(int numerator, int denominator) {
@@ -74,7 +74,7 @@ public class Fraction extends Number implements Comparable<Fraction> {
     }
     
     public String toString() {
-    	return this.getNumerator() + "/" + this.getDenominator();
+        return this.getNumerator() + "/" + this.getDenominator();
     }
     
 }

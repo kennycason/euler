@@ -11,14 +11,14 @@ import java.util.List;
 @Solved
 public class _079 extends Problem {
 
-	public static void main(String[] args) {
-		Problem p = new _079();
-		p.run();
-		System.out.println(p.answer());
-	}
+    public static void main(String[] args) {
+        Problem p = new _079();
+        p.run();
+        System.out.println(p.answer());
+    }
 
     // brute force
-	public void run() {
+    public void run() {
 //        final List<int[]> allDigits1 = Arrays.asList(new int[] {1,2,3}, new int[] {2,3,4});
 //        System.out.println(matchesAll(1234, allDigits1));
 //        System.out.println(matchesAll(124, allDigits1));
@@ -32,7 +32,7 @@ public class _079 extends Problem {
             }
             n++;
         }
-	}
+    }
 
     private boolean matchesAll(final int n, final List<int[]> allDigits) {
         final int[] nDigits = Numbers.getDigits(n);
@@ -124,5 +124,5 @@ public class _079 extends Problem {
         }
         return allDigits;
     }
-	
+
 }

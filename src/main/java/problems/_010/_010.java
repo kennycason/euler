@@ -7,22 +7,22 @@ import main.annotations.Solved;
 @Solved
 public class _010 extends Problem {
 
-	public static void main(String[] args) {
-		Problem p = new _010();
-		p.run();
-		System.out.println(p.answer());
-	}
+    public static void main(String[] args) {
+        Problem p = new _010();
+        p.run();
+        System.out.println(p.answer());
+    }
 
-	public void run() {
-		int n = 2000000;
-		
-		long sum = 0;
-		for(int i = 0; i < n; i++) {
-			if(Numbers.isPrime(i)) {
-				sum += i;
-			}
-		}
-		this.answer = sum;
-	}
+    public void run() {
+        int n = 2000000;
+
+        long sum = 0;
+        for(int i = 0; i < n; i++) {
+            if(Numbers.isPrime(i)) {
+                sum += i;
+            }
+        }
+        this.answer = sum;
+    }
 
 }

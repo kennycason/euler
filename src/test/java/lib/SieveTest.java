@@ -8,14 +8,14 @@ import org.junit.Test;
 
 public class SieveTest {
 
-	@Test
-	public void eratosthenesTest() {
-		List<Long> primes = Sieve.eratosthenes(120);
-		System.out.println(primes);
-		assertEquals(30, primes.size());
-		assertEquals(2, (long)primes.get(0));
-		assertEquals(3, (long)primes.get(1));
-		assertEquals(113, (long)primes.get(29));
-	}
+    @Test
+    public void eratosthenesTest() {
+        List<Long> primes = Sieve.eratosthenes(120);
+        System.out.println(primes);
+        assertEquals(30, primes.size());
+        assertEquals(2, (long)primes.get(0));
+        assertEquals(3, (long)primes.get(1));
+        assertEquals(113, (long)primes.get(29));
+    }
 
 }
