@@ -6,17 +6,12 @@ import main.annotations.Solved;
 import org.reflections.Reflections;
 
 import java.awt.*;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class Runner {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         final Runner r = new Runner();
         r.run();
     }
@@ -25,17 +20,17 @@ public class Runner {
 
         final Clock clock = Clock.getInstance();
         clock.start();
-        final Map<Integer, Problem> problems = Runner.getProblems();
-        final List<Integer> keys = new LinkedList<Integer>(problems.keySet());
+        final Map<Integer, Problem> problems = getProblems();
+        final List<Integer> keys = new ArrayList<>(problems.keySet());
         Collections.sort(keys);
 
-        final List<Result> results = new LinkedList<Result>();
-        for(Integer i : keys) {
+        final List<Result> results = new ArrayList<>();
+        for (final Integer i : keys) {
             try {
-                Result r = new Result();
+                final Result r = new Result();
                 r.problem = i;
-                Problem p = problems.get(i);
-                if(p.solved()) {
+                final Problem p = problems.get(i);
+                if (p.solved()) {
                     System.out.println("Problem #" + i);
                     clock.reset();
                     p.run();
@@ -45,10 +40,10 @@ public class Runner {
                     System.out.println("Time: " + r.time + "s");
                     System.out.println();
                 }
-                if(p.solved()) {
+                if (p.solved()) {
                     results.add(r);
                 }
-            } catch (Exception e) {
+            } catch (final Exception e) {
                 // Pokemon, gotta catch'em all!
             }
         }
@@ -59,9 +54,9 @@ public class Runner {
 
     public static Map<Integer, Problem> getProblems() {
         final Map<Integer, Problem> problems = new HashMap<>();
-        Reflections reflections = new Reflections("problems");
-        Set<Class<?>> annotatedClasses = reflections.getTypesAnnotatedWith(Solved.class);
-        for(Class<?> annotatedClass : annotatedClasses) {
+        final Reflections reflections = new Reflections("problems");
+        final Set<Class<?>> annotatedClasses = reflections.getTypesAnnotatedWith(Solved.class);
+        for (final Class<?> annotatedClass : annotatedClasses) {
             final int problemNumber = Integer.parseInt(annotatedClass.getSimpleName().replace("_", ""));
             try {
                 problems.put(problemNumber, (Problem) annotatedClass.newInstance());
@@ -72,8 +67,8 @@ public class Runner {
         return problems;
     }
 
-    private String buildHtml(List<Result> results) {
-        StringBuffer sb = new StringBuffer();
+    private String buildHtml(final List<Result> results) {
+        final StringBuilder sb = new StringBuilder();
         sb.append("Project Euler - Java\n"
                 + "=====\n\n"
                 + "My attempt at Project Euler problems using Java<br/>\n"
@@ -84,16 +79,14 @@ public class Runner {
                 + "Max Memory: " + Runtime.getRuntime().maxMemory() + "<br/>\n"
                 + "Current results (better view at: http://ken-soft.com/project-euler/)<br/>\n");
         sb.append("<table border=\"1\" cellpadding=\"4\">\n<tr><td></td><td>Answer</td><td>Time</td><td>@Source</td</tr>\n");
-        for (Result r : results) {
 
-            String url = "https://github.com/kennycason/euler/blob/master/src/main/java/problems/_" + pad(r.problem) + "/_" + pad(r.problem) + ".java";
-
+        for (final Result r : results) {
+            final String url = "https://github.com/kennycason/euler/blob/master/src/main/java/problems/p" + pad(r.problem) + ".java";
             sb.append("<tr><td><b>");
             sb.append("#" + r.problem);
             sb.append("</b></td><td>");
             sb.append(r.answer);
-            sb.append("</td><td style=\"background-color:#"
-                    + toHex(scaleRedGreen(r.time, 2.0)) + "\">");
+            sb.append("</td><td style=\"background-color:#" + toHex(scaleRedGreen(r.time, 2.0)) + "\">");
             sb.append(r.time + "s");
             sb.append("</td><td>");
             sb.append("<a href=\"" + url + "\" target=\"_blank\" style=\"text-decoration: none; color: black;\">Link</a>");
@@ -103,7 +96,7 @@ public class Runner {
         return sb.toString();
     }
 
-    private String pad(int i) {
+    private static String pad(final int i) {
         if (i < 10) {
             return "00" + i;
         }
@@ -113,19 +106,19 @@ public class Runner {
         return String.valueOf(i);
     }
 
-    private Color scaleRedGreen(double val, double max) {
-        if(val < 0) {
+    private static Color scaleRedGreen(double val, final double max) {
+        if (val < 0) {
             return Color.lightGray;
         }
-        if(val > max) {
+        if (val > max) {
             val = max;
         }
-        int r = (int) ((255 * (max - val)) / max);
-        int g = (int) ((255 * val) / max);
+        final int r = (int) ((255 * (max - val)) / max);
+        final int g = (int) ((255 * val) / max);
         return new Color(255 - r, 255 - g, 0);
     }
 
-    public String toHex(Color c) {
+    public String toHex(final Color c) {
         String hexString = Integer.toHexString(c.getRGB() & 0xffffff);
         while (hexString.length() < 6) {
             hexString = "0" + hexString;
@@ -134,11 +127,8 @@ public class Runner {
     }
 
     private class Result {
-
         public int problem;
-
         public Object answer;
-
         public double time;
 
         public String toString() {
