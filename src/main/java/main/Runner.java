@@ -57,7 +57,7 @@ public class Runner {
         final Reflections reflections = new Reflections("problems");
         final Set<Class<?>> annotatedClasses = reflections.getTypesAnnotatedWith(Solved.class);
         for (final Class<?> annotatedClass : annotatedClasses) {
-            final int problemNumber = Integer.parseInt(annotatedClass.getSimpleName().replace("_", ""));
+            final int problemNumber = Integer.parseInt(annotatedClass.getSimpleName().replace("p", ""));
             try {
                 problems.put(problemNumber, (Problem) annotatedClass.newInstance());
             } catch (InstantiationException | IllegalAccessException e) {
