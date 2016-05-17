@@ -77,7 +77,7 @@ public class Runner {
                 + "System Stats:\n"
                 + "Available processors (cores): " +  Runtime.getRuntime().availableProcessors() + "\n"
                 + "Max Memory: " + Runtime.getRuntime().maxMemory() + "<br/>\n"
-                + "Current results (better view at: http://ken-soft.com/project-euler/)<br/>\n");
+                + "Current results (better view at: http://kennycason.com/euler.html)<br/>\n");
         sb.append("<table border=\"1\" cellpadding=\"4\">\n<tr><td></td><td>Answer</td><td>Time</td><td>@Source</td</tr>\n");
 
         for (final Result r : results) {
