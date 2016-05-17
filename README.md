@@ -7,7 +7,7 @@ Friend Id: 51224783162534_6a549f720ff34f6884df595acdc8e85b<br/>
 System Stats:
 Available processors (cores): 8
 Max Memory: 3817865216<br/>
-Current results (better view at: http://ken-soft.com/project-euler/)<br/>
+Current results (better view at: http://kennycason.com/euler.html)<br/>
 <table border="1" cellpadding="4">
 <tr><td></td><td>Answer</td><td>Time</td><td>@Source</td</tr>
 <tr><td><b>#1</b></td><td>233168</td><td style="background-color:#00ff00">0.0s</td><td><a href="https://github.com/kennycason/euler/blob/master/src/main/java/problems/p001.java" target="_blank" style="text-decoration: none; color: black;">Link</a></td></tr>
